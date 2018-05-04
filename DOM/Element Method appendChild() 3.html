@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#myDIV {
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+
+<p>Click the button to create a P element with some text, and append it to DIV.</p>
+
+<div id="myDIV">
+A DIV element
+</div>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+    var para = document.createElement("P");
+    var t = document.createTextNode("This is a paragraph.");
+    para.appendChild(t);
+    document.getElementById("myDIV").appendChild(para);
+}
+</script>
+
+</body>
+</html>

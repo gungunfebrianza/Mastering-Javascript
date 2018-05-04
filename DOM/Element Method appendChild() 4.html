@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to create a P element with some text, and append it to the document's body.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+    var x = document.createElement("P");
+    var t = document.createTextNode("This is a paragraph.");
+    x.appendChild(t);
+    document.body.appendChild(x);
+}
+</script>
+
+</body>
+</html>
