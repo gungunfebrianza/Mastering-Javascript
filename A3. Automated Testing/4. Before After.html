@@ -35,18 +35,18 @@
       for (let i = 0; i < n; i++) {
         result *= x;
       }
-      return result;
+
+      return result;      
     }
-    describe("test", function() {
+    describe("pow", function() {
 
-      before(() => alert("Testing started – before all tests"));
-      after(() => alert("Testing finished – after all tests"));
+      it("2 raised to power 3 is 8", function() {
+        assert.equal(pow(2, 3), 8);
+      });
 
-      beforeEach(() => alert("Before a test – enter a test"));
-      afterEach(() => alert("After a test – exit a test"));
-
-      it('test 1', () => alert(1));
-      it('test 2', () => alert(2));
+      it("3 raised to power 3 is 27", function() {
+        assert.equal(pow(3, 3), 27);
+      });
 
     });
   </script>
