@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Typeof & Type Conversion</title>
+  <title>Typeof</title>
 </head>
 <body>
 
-  <h2>Typeof & Type Conversion</h2>
+  <h2>Typeof</h2>
 
   <script>
     var years = 2018;
@@ -26,24 +26,6 @@
     console.log(typeof gun.nama);
     console.log(typeof(nullvar));
     console.log(typeof(_undefined));
-
-    //convert to string
-    let value = true;
-    console.log(typeof value); // boolean
-
-    value = String(value); // now value is a string "true"
-    console.log(typeof value); // string
-
-    //Convert to Number
-    let str = "123";
-    let num = Number(str); // becomes a number 123
-    console.log(typeof num); // string
-
-    let age = Number("an arbitrary string instead of a number");
-    let nan = Number(age);
-    console.log(age); // NaN
-    console.log(typeof(age));
-
   </script>
 
 </body>
