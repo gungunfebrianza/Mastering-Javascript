@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Object Properties</title>
+</head>
+
+<body>
+  <p id="demo"></p>
+</body>
+<script>
+  var person = {
+    firstName: "John",
+    age: 50,
+    "likes birds": true  // multiword property name must be quoted
+  };
+  person.isAdmin = true;
+  delete person.age;
+
+  document.getElementById("demo").innerHTML =
+  person["firstName"] + " is " + person.age + " years old.";
+</script>
+
+</html>

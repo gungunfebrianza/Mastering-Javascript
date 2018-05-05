@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Object Properties</title>
+</head>
+
+<body>
+  <p id="demo"></p>
+</body>
+<script>
+  let user = {};
+
+  // set
+  user["likes birds"] = true;
+
+  // get
+  alert(user["likes birds"]); // true
+
+  // delete
+  delete user["likes birds"];
+  console.log(user)
+</script>
+
+</html>
