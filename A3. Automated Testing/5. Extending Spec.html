@@ -36,7 +36,7 @@
         result *= x;
       }
 
-      return result;      
+      return result;
     }
     describe("pow", function() {
 
@@ -46,6 +46,14 @@
 
       it("3 raised to power 3 is 27", function() {
         assert.equal(pow(3, 3), 27);
+      });
+
+      it("for negative n the result is NaN", function() {
+        assert.isNaN(pow(2, -1));
+      });
+
+      it("for non-integer n the result is NaN", function() {
+        assert.isNaN(pow(2, 1.5));
       });
 
     });
