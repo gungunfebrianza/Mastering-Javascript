@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Create Object</title>
+</head>
+
+<body>
+  <p id="demo"></p>
+</body>
+<script>
+  let user = new Object(); // "object constructor" syntax
+  let users = {}; // "object literal" syntax
+  
+  var person = {
+    firstName: "John",
+    age: 50,
+  };
+
+  document.getElementById("demo").innerHTML =
+  person["firstName"] + " is " + person.age + " years old.";
+</script>
+
+</html>
