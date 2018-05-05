@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ternary Operator</title>
+  </head>
+  <body>
+
+  </body>
+  <script type="text/javascript">
+    let age = 20;
+    let accessAllowed = age > 18 ? true : false;
+    document.write(accessAllowed);
+    document.write("<br/>");
+
+    let message =
+      (age < 3) ? 'Hi, baby!' :
+      (age < 18) ? 'Hello!' :
+      (age < 100) ? 'Greetings!' :
+      'What an unusual age!';
+
+    document.write( message );
+  </script>
+</html>
