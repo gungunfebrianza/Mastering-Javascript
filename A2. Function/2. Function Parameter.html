@@ -3,23 +3,21 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Function Return</title>
+  <title>Function Parameter</title>
 </head>
 
 <body>
   <h2>JavaScript Functions</h2>
-
   <p>This example calls a function which performs a calculation, and returns the result:</p>
-
   <p id="demo"></p>
 </body>
 <script>
-  function sum(a, b) {
-    return a + b;
+  function showMessage(from, text) { // arguments: from, text
+    alert(from + ': ' + text);
   }
 
-  let result = sum(1, 2);
-  alert(result); // 3
+  showMessage('Ann', 'Hello!'); // Ann: Hello! (*)
+  showMessage('Ann', "What's up?"); // Ann: What's up? (**)
 </script>
 
 </html>
