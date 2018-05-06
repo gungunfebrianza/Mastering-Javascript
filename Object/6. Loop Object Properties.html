@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Loop Object Properties</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  let user = {
+    name: "John",
+    age: 30,
+    isAdmin: true
+  };
+
+  for (let key in user) {
+    // keys
+    alert(key); // name, age, isAdmin
+    // values for the keys
+    alert(user[key]); // John, 30, true
+  }
+</script>
+
+</html>
