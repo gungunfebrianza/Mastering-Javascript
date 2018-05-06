@@ -17,6 +17,18 @@
 
   admin.name = 'Pete'; // changed by the "admin" reference
   alert(user.name); // 'Pete', changes are seen from the "user" reference
+
+  let clone = {}; // the new empty object
+
+  // let's copy all user properties into it
+  for (let key in user) {
+    clone[key] = user[key];
+  }
+
+  // now clone is a fully independant clone
+  clone.name = "John"; // changed the data in it
+
+  alert( clone.name ); // still John in the original object
 </script>
 
 </html>
