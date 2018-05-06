@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Copy Object</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  let user = {
+    name: 'John'
+  };
+  let admin = user;
+
+  admin.name = 'Pete'; // changed by the "admin" reference
+  alert(user.name); // 'Pete', changes are seen from the "user" reference
+</script>
+
+</html>
