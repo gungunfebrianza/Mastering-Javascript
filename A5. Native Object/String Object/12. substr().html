@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Method substr()</title>
+  </head>
+  <body>
+
+  </body>
+  <script>
+    /*
+    Description
+      This method returns the characters in a string beginning at the specified location through the specified number of characters.
+
+    Syntax
+      The syntax to use substr() is as follows −
+      string.substr(start[, length]);
+
+    Argument Details
+        start − Location at which to start extracting characters (an integer between 0 and one less than the length of the string).
+        length − The number of characters to extract.
+    Note − If start is negative, substr uses it as a character index from the end of the string.
+    Return Value
+
+    The substr() method returns the new sub-string based on given parameters.
+    */
+    var str = "Apples are round, and apples are juicy.";
+
+    document.write("(1,2): "    + str.substr(1,2));
+    document.write("<br />(-2,2): "   + str.substr(-2,2));
+    document.write("<br />(1): "      + str.substr(1));
+    document.write("<br />(-20, 2): " + str.substr(-20,2));
+    document.write("<br />(20, 2): "  + str.substr(20,2));    
+  </script>
+</html>
