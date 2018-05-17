@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Method slice()</title>
+  </head>
+  <body>
+
+  </body>
+  <script>
+    /*
+    This method extracts a section of a string and returns a new string.
+
+    Syntax
+      The syntax for slice() method is −
+      string.slice( beginslice [, endSlice] );
+
+      Argument Details
+          beginSlice − The zero-based index at which to begin extraction.
+          endSlice − The zero-based index at which to end extraction. If omitted, slice extracts to the end of the string.p>
+
+      Return Value
+        If successful, slice returns the index of the regular expression inside the string. Otherwise, it returns -1.
+    */
+    var str = "Apples are round, and apples are juicy.";
+    var sliced = str.slice(1, -2);
+
+    document.write( sliced );
+
+  </script>
+</html>
