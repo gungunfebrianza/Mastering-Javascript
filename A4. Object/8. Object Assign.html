@@ -10,7 +10,7 @@
 
 </body>
 <script>
-  let user = {
+  let user1 = {
     name: "John"
   };
 
@@ -22,9 +22,36 @@
   };
 
   // copies all properties from permissions1 and permissions2 into user
-  Object.assign(user, permissions1, permissions2);
-  console.log(user);
-  // now user = { name: "John", canView: true, canEdit: true }
+  Object.assign(user1, permissions1, permissions2);
+  console.log(user1); // now user = { name: "John", canView: true, canEdit: true }
+
+  //If the receiving object (user) already has the same named property, it will be overwritten:
+  let user2 = {
+    name: "John"
+  };
+
+  // overwrite name, add isAdmin
+  Object.assign(user2, {
+    name: "Pete",
+    isAdmin: true
+  });
+  console.log(user2); // now user = { name: "Pete", isAdmin: true }
+
+  let user3 = {
+    name: "John",
+    sizes: {
+      height: 182,
+      width: 50
+    }
+  };
+
+  let clone = Object.assign({}, user3);
+
+  alert(user3.sizes === clone.sizes); // true, same object
+
+  // user and clone share sizes
+  user3.sizes.width++; // change a property from one place
+  alert(clone.sizes.width); // 51, see the result from the other one
 </script>
 
 </html>
