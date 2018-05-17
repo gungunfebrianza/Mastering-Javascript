@@ -14,6 +14,11 @@
     name: "John",
     age: 30
   };
+  let us;
+
+  for (us in user) {
+    alert(us);
+  }
 
   alert("age" in user); // true, user.age exists
   alert("blabla" in user); // false, user.blabla doesn't exist
