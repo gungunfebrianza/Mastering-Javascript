@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Method substring()</title>
+  </head>
+  <body>
+
+  </body>
+  <script>
+    /*
+    Description
+    This method returns a subset of a String object.
+
+    Syntax
+    The syntax to use substr() is as follows −
+    string.substring(indexA, [indexB])
+
+    Argument Details
+        indexA − An integer between 0 and one less than the length of the string.
+        indexB − (optional) An integer between 0 and the length of the string.
+
+    Return Value
+    The substring method returns the new sub-string based on given parameters.
+    */
+
+    var str = "Apples are round, and apples are juicy.";
+
+    document.write("(1,2): "    + str.substring(1,2));
+    document.write("<br />(0,10): "   + str.substring(0, 10));
+    document.write("<br />(5): "      + str.substring(5));    
+  </script>
+</html>
