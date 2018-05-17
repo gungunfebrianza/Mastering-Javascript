@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Method toPrecision()</title>
+  </head>
+  <body>
+
+  </body>
+  <script>
+    /*
+    Description
+    This method returns a string representing the number object to the specified precision.
+
+    Syntax
+    Its syntax is as follows −
+    number.toPrecision( [ precision ] )
+
+    Parameter Details
+    precision − An integer specifying the number of significant digits.
+    Return Value
+
+    Returns a string representing a Number object in fixed-point or exponential
+    notation rounded toprecision significant digits.
+    */
+    var num = new Number(7e4);
+    document.write("num.toPrecision() is " + num.toPrecision());
+    document.write("<br />");
+
+    document.write("num.toPrecision(4) is " + num.toPrecision(4));
+    document.write("<br />");
+
+    document.write("num.toPrecision(2) is " + num.toPrecision(2));
+    document.write("<br />");
+
+    document.write("num.toPrecision(1) is " + num.toPrecision(1));
+  </script>
+</html>
