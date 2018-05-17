@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Method toExponential</title>
+  </head>
+  <body>
+
+  </body>
+  <script>
+    /*
+    Description
+    This method returns a string representing the number object in exponential notation.
+
+    Syntax
+    Its syntax is as follows −
+    number.toExponential( [fractionDigits] )
+
+    Parameter Details
+    fractionDigits − An integer specifying the number of digits after the decimal point.
+    Defaults to as many digits as necessary to specify the number.
+
+    Return Value
+    A string representing a Number object in exponential notation with one digit before the decimal point,
+    rounded to fractionDigits digits after the decimal point. If the fractionDigits argument is omitted,
+    the number of digits after the decimal point defaults to the number of digits necessary to represent the value uniquely.
+
+    */
+    var num=77.1234;
+    var val = num.toExponential();
+    document.write("num.toExponential() is : " + val );
+    document.write("<br />");
+
+    val = num.toExponential(4);
+    document.write("num.toExponential(4) is : " + val );
+    document.write("<br />");
+
+    val = num.toExponential(2);
+    document.write("num.toExponential(2) is : " + val);
+    document.write("<br />");
+
+    val = 77.1234.toExponential();
+    document.write("77.1234.toExponential()is : " + val );
+    document.write("<br />");
+
+    val = 77.1234.toExponential();
+    document.write("77 .toExponential() is : " + val);
+  </script>
+</html>
