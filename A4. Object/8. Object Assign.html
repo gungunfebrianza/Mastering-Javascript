@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Object Assign</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  let user = {
+    name: "John"
+  };
+
+  let permissions1 = {
+    canView: true
+  };
+  let permissions2 = {
+    canEdit: true
+  };
+
+  // copies all properties from permissions1 and permissions2 into user
+  Object.assign(user, permissions1, permissions2);
+  console.log(user);
+  // now user = { name: "John", canView: true, canEdit: true }
+</script>
+
+</html>
