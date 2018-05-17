@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <p id="demo"></p>
+
 </body>
 <script>
   var person = {
@@ -15,11 +15,16 @@
     age: 50,
     "likes birds": true  // multiword property name must be quoted
   };
+
+  //The value can be of any type. Let’s add a boolean one:
   person.isAdmin = true;
+
+  //To remove a property, we can use delete operator:
   delete person.age;
 
-  document.getElementById("demo").innerHTML =
-  person["firstName"] + " is " + person.age + " years old.";
+  //alert(person["firstName"])
+  //alert(person.age);
+  //alert(typeof person.age);
 </script>
 
 </html>
