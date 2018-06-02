@@ -1,59 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
-  <title>Console Log</title>
+    <meta charset="utf-8">
+    <title>Variable & Data Type</title>
 </head>
 <body>
+    <p id="p"></p>
+</body>
+<script type="text/javascript">
+    document.getElementById("p").innerHTML = "This is some example about variable and data type on JavaScript, please check console log for the result example and read the comments.";
+    /* The code below will implement variable and data type concept on JavaScript. */
+    
+    /* Number Data Type */
+    /* JavaScript represents numbers using the 64-bit floating-point format defined by IEEE 754 standard. */
 
-  <h2>JavaScript Variables</h2>
-
-  <script>
     var years = 2018;
     var pi = 3.14;
-    /*JavaScript represents numbers using the 64-bit floating-point format defined by the IEEE 754 standard.
-    Besides regular numbers, there are so-called “special numeric values” which also belong to that type:
-    1. Infinity = represents the mathematical Infinity ∞. It is a special value that’s greater than any number.
-    2. -Infinity and
-    3. NaN = represents a computational error. It is a result of an incorrect or an undefined mathematical operation,
-    */
 
-    var maudy = "Maudy Ayunda";
-    /*In JavaScript, there are 3 types of quotes.
-    1. Double quotes: "Hello".
-    2. Single quotes: 'Hello'.
-    3. Backticks: `Hello`.
-    */
+    /* Besides regural numbers, there are so called "special numeric values" which also belong to the number data type:
+    1. Infinity = represents the mathematical Infinity. It is a special value that's greater than any number.
+    2. -Infinity and NaN = represents the computational error. It is a result of an incorrect or an undefined mathematical operation. */
+
+    /* String Data Type */
+
+    var beautifulGirl = "Chelsea Islan";
+
+    /* String data type must be defined with quotes symbol. There are 3 types of quotes :
+    1. Double quotes ("")
+    2. Single quotes ('')
+    3. Backticks (``) */
+
+    /* Boolean Data Type */
 
     var logic = true;
-    // The boolean type has only two values: true and false.
 
-    let gun = {
-      nama: "Gun Gun Febrianza"
-    };
-    /*All other types are called “primitive”, because their values can contain only a single thing (be it a string or a number or whatever).
-    In contrast, objects are used to store collections of data and more complex entities*/
+    /* Boolean data type will only contain two values, which is true or false */
+
+    /* Object Data Type */
+
+    let person = {
+        name : "Nowo Adisuryo"
+    }
+
+    /* All other types beside object data type are called "primitive" data type, because they can only contain a single value and single data type in a variable. In contrast, objects are used to store collections of data and more complex entities. Note : The use of "let" keyword on code above is same concept with the use of "var" keyword to create a variable */
+
+    /* The special null value does not belong to any of these described above. */
 
     let nullvar = null;
-    //The special null value does not belong to any type of those described above.
+
+    /* The meaning of undefined is "value is not assigned". */
 
     let _undefined;
-    //The meaning of undefined is “value is not assigned”.
 
     console.log(years);
+    console.log(beautifulGirl);
     console.log(pi);
-    console.log(gun);
-    console.log(gun.nama);
+    console.log(person);
+    console.log(person.name);
     console.log(nullvar);
     console.log(_undefined);
+
+    /* There is a widespread practice to use constants as aliases for difficult-to-remember values that are known prior to execution. */
 
     const COLOR_RED = "#F00";
     const COLOR_GREEN = "#0F0";
     const COLOR_BLUE = "#00F";
     const COLOR_ORANGE = "#FF7F00";
-    //There is a widespread practice to use constants as aliases for difficult-to-remember values that are known prior to execution.
 
-  </script>
-
-</body>
-
+</script>
 </html>

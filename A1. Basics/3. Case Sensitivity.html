@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Case Sensitivity</title>
-  </head>
-  <body>
-
-  </body>
-  <script type="text/javascript">
-    var A = 10;
-    var a = 15;
-    console.log(A);
-    console.log(a);
-  </script>
+<head>
+  <meta charset="utf-8">
+  <title>Case Sensitive</title>
+</head>
+<body>
+  <p id="p"></p>
+</body>
+<script type="text/javascript">
+  document.getElementById("p").innerHTML = "JavaScript is a case sensitive programming language, which mean a var A and var a is a different variable. Please check console log for the result example.";
+  var a = 10;
+  var A = 20;
+  console.log(a);
+  console.log(A);
+</script>
 </html>

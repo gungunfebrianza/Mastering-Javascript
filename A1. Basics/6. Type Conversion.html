@@ -7,25 +7,33 @@
 </head>
 
 <body>
-
+  <p id="p"></p>
 </body>
 <script type="text/javascript">
+  document.getElementById("p").innerHTML = "In JavaScript you can convert data type to another data type with JavaScript built in function. Please check console log for the result example and read the comments in the html file to see the explanation.";
   //convert to string
   let value = true;
-  console.log(typeof value); // boolean
+  console.log(value +" : "+ typeof value); // boolean
 
   value = String(value); // now value is a string "true"
-  console.log(typeof value); // string
+  console.log(value +" : "+ typeof value); // string
 
   //Convert to Number
   let str = "123";
   let num = Number(str); // becomes a number 123
-  console.log(typeof num); // string
+  console.log(num +" : "+ typeof num); // string
 
   let age = Number("an arbitrary string instead of a number");
   let nan = Number(age);
   console.log(age); // NaN
-  console.log(typeof(age));
+  console.log(age +" : "+ typeof(age));
+
+  let boolean = "true"; //string
+  console.log(boolean +" : "+ typeof boolean);
+
+  boolean = Boolean(boolean);
+  console.log(boolean +" : "+ typeof boolean);
+
 </script>
 
 </html>

@@ -1,31 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
+  <meta charset="utf-8">
   <title>Typeof</title>
 </head>
 <body>
 
   <h2>Typeof</h2>
-
+  <p id="p"></p>
   <script>
+    document.getElementById("p").innerHTML = "The typeof operator will inform you the data type of the operand. Please check console log for the result example and read the comments in the html file to read concept explanation.";
+
+    /* This code will return Number data type. */
     var years = 2018;
     var pi = 3.14;
-    //JavaScript represents numbers using the 64-bit floating-point format defined by the IEEE 754 standard.
 
+    /* This code will return String data type. */
     var maudy = "Maudy Ayunda";
+
+    /* This code will return Boolean data type. */
     var logic = true;
+
+    /* This code will return Object data type. */
     let gun = {
       nama: "Gun Gun Febrianza"
     };
+
+    /* This code will return Object data type. */
     let nullvar = null;
+
+    /* This code will return Undefined data type. */
     let _undefined;
 
-    console.log(typeof years);
-    console.log(typeof pi);
-    console.log(typeof gun);
-    console.log(typeof gun.nama);
-    console.log(typeof(nullvar));
-    console.log(typeof(_undefined));
+    console.log(years + " : " + typeof years);
+    console.log(pi  + " : " + typeof pi);
+    console.log(gun  + " : " + typeof gun);
+    console.log(gun.nama + " : " + typeof gun.nama);
+    console.log(nullvar  + " : " + typeof nullvar);
+    console.log(_undefined + " : " + typeof _undefined);
   </script>
 
 </body>

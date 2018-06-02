@@ -5,13 +5,18 @@
     <title>Use Strict</title>
   </head>
   <body>
-
+    <p id="p"></p>
+    <p id="example"></p>
+    <p id="example2"></p>
   </body>
   <script type="text/javascript">
-    /*The directive looks like a string: "use strict" or 'use strict'.
-    When it is located on the top of the script, then the whole script works the “modern” way.*/
-
     "use strict";
-    var a;
+
+    document.getElementById("p").innerHTML = 'The use strict is a rules that enable you to use "strict mode" on your JavaScript code.';
+    var x = "This paragraph is correct on strict mode, so it will be executed.";
+    document.getElementById("example").innerHTML = x;
+    y = "This paragraph is not correct on strict mode, so it will not be executed.";
+    document.getElementById("example2").innerHTML = y;
+
   </script>
 </html>

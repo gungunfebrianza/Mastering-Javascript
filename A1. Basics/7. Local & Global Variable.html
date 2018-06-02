@@ -5,17 +5,16 @@
     <title>Local & Global Variable</title>
   </head>
   <body>
-
+    <p id="p"></p>
   </body>
   <script type = "text/javascript">
-   <!--
-      var myVars = "global"; // Declare a global variable
-      function checkScope( ) {
-         var myVars = "local";  // Declare a local variable
-         console.log(myVars);
-      }
-      console.log(myVars)
-      console.log(checkScope())
-   //-->
+    document.getElementById("p").innerHTML = "Local variable will only can be used inside a function, when global variable can be used inside and outside a function.";
+    var myVars = "global"; // Declare a global variable
+    function checkScope( ) {
+       var myVars = "local";  // Declare a local variable
+       console.log(myVars);
+    }
+    console.log(myVars)
+    console.log(checkScope())
 </script>
 </html>
