@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Method getElementByID</title>
-  </head>
-  <body>
-    <p id="demo">Click the button to change the color of this paragraph.</p>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>getElementById()</title>
+</head>
 
-    <button onclick="myFunction()">Try it</button>
-  </body>
+<body>
+  <p id="demo"></p>
+
   <script>
-    function m
+    let obj = document.getElementById("demo");
+    obj.innerHTML = "Hello World!";
   </script>
+</body>
+
 </html>
