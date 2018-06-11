@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>querySelector()</title>
+
+</head>
+
+<body>
+  <div id="myDIV">
+    <p id="demo">This is a p element with id="demo" in a div.</p>
+  </div>
+
+  <p>Click the button to change the text of the p element in div.</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myDIV");
+      x.querySelector("#demo").innerHTML = "Hello World!";
+    }
+  </script>
+</body>
+
+</html>
