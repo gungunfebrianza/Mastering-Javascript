@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>parentNode</title>
+</head>
+
+<body>
+  <p>Example list:</p>
+
+  <ul>
+    <li id="myLI">Coffee</li>
+    <li>Tea</li>
+  </ul>
+
+  <p>Click the button to get the node name of the parent node of the li element in the list.</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <p id="demo"></p>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myLI").parentNode.nodeName;
+      document.getElementById("demo").innerHTML = x;
+    }
+  </script>
+</body>
+
+</html>
