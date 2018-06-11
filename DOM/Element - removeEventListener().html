@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>removeEventListener</title>
+  <style>
+    #myDIV {
+      background-color: coral;
+      border: 1px solid;
+      padding: 50px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="myDIV">This div element has an onmousemove event handler that displays a random number every time you move your mouse inside this orange field.
+    <p>Click the button to remove the DIV's event handler.</p>
+    <button onclick="removeHandler()" id="myBtn">Try it</button>
+  </div>
+
+  <p><strong>Note:</strong> The addEventListener() and removeEventListener() methods are not supported in Internet Explorer 8 and earlier versions.</p>
+
+  <p id="demo"></p>
+
+  <script>
+    document.getElementById("myDIV").addEventListener("mousemove", myFunction);
+
+    function myFunction() {
+      document.getElementById("demo").innerHTML = Math.random();
+    }
+
+    function removeHandler() {
+      document.getElementById("myDIV").removeEventListener("mousemove", myFunction);
+    }
+  </script>
+</body>
+
+</html>
