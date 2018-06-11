@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>setAttribute()</title>
+  <style>
+    .democlass {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Hello World</h1>
+
+  <p>Click the button to add a class attribute with the value of "democlass" to the h1 element.</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <script>
+    /*Definition
+      The setAttribute() method adds the specified attribute to an element, and gives it the specified value.
+      If the specified attribute already exists, only the value is set/changed.
+      Note: Although it is possible to add the style attribute with a value to an element with this method,
+      it is recommended that you use
+      https://www.w3schools.com/jsref/dom_obj_style.asp
+
+      Bad:
+      element.setAttribute("style", "background-color: red;");
+      Good:
+      element.style.backgroundColor = "red";
+
+      */
+    function myFunction() {
+      document.getElementsByTagName("H1")[0].setAttribute("class", "democlass");
+    }
+  </script>
+</body>
+
+</html>
