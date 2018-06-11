@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>addEventListener()</title>
+</head>
+
+<body>
+  <p>Click the button to change its background color.</p>
+
+  <button id="myBtn">Try it</button>
+
+  <script>
+    document.getElementById("myBtn").addEventListener("click", function() {
+      this.style.backgroundColor = "red";
+    });
+  </script>
+</body>
+
+</html>
