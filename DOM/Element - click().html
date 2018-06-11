@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Method click()</title>
+</head>
+
+<body>
+
+  <p>Hover over the checkbox to simulate a mouse-click.</p>
+
+  <form>
+    <input type="checkbox" id="myCheck" onmouseover="myFunction()" onclick="alert('click event occured')">
+  </form>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myCheck").click();
+    }
+  </script>
+
+
+</body>
+
+</html>
