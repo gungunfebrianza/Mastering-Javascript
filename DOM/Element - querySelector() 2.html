@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>querySelector()</title>
+  <style>
+    #myDIV {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="myDIV">
+    <p>This is a p element in div.</p>
+    <p>This is also a p element in div.</p>
+  </div>
+
+  <p>Click the button to change the text of the first p element in div.</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myDIV");
+      x.querySelector("p").innerHTML = "Hello World!";
+    }
+  </script>
+</body>
+
+</html>
