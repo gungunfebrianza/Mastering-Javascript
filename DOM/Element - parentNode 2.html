@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>parentNode Example</title>
+  <style>
+    div {
+      box-sizing: border-box;
+      padding: 16px;
+      width: 100%;
+      background-color: red;
+      color: #fff;
+    }
+
+    .closebtn {
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .closebtn:hover {
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <span onclick="this.parentNode.style.display = 'none';" class="closebtn">&times;</span>
+    <p>To close this container, click on the X symbol to the right.</p>
+  </div>
+
+</body>
+
+</html>
