@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>addEventListener()</title>
+</head>
+
+<body>
+  <p>This example uses the addEventListener() method to execute a function when a user clicks on a button.</p>
+
+  <button id="myBtn">Try it</button>
+
+  <p id="demo"></p>
+
+    <script>
+      document.getElementById("myBtn").addEventListener("click", myFunction);
+
+      function myFunction() {
+        document.getElementById("demo").innerHTML = "Hello World";
+      }
+    </script>
+</body>
+
+</html>
