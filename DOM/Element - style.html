@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>style</title>
+</head>
+
+<body>
+  <h1 id="myH1">How to change the style of a header</h1>
+
+  <p>Click the button to add a color to the H1 element.</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <script>
+    /*
+    The style property returns a CSSStyleDeclaration object, which represents an element's style attribute.
+    The style property is used to get or set a specific style of an element using different CSS properties.
+    element.style.backgroundColor = "red";
+    As you can see, the JavaScript syntax for setting CSS properties is slightly different than CSS (backgroundColor instead of background-color).
+    Take a look here :
+    https://www.w3schools.com/jsref/dom_obj_style.asp
+     */
+    function myFunction() {
+      document.getElementById("myH1").style.color = "red";
+    }
+  </script>
+</body>
+
+</html>
