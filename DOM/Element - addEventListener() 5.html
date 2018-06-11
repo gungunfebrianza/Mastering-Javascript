@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>addEventListener()</title>
+</head>
+
+<body>
+  <p>This example demonstrates how to pass parameter values when using the addEventListener() method.</p>
+
+  <p>Click the button to perform a calculation.</p>
+
+  <button id="myBtn">Try it</button>
+
+  <p id="demo"></p>
+
+  <script>
+    var p1 = 5;
+    var p2 = 7;
+
+    //When passing parameter values, use an "anonymous function" that calls the specified function with the parameters:
+    document.getElementById("myBtn").addEventListener("click", function() {
+      myFunction(p1, p2);
+    });
+
+    function myFunction(a, b) {
+      var result = a * b;
+      document.getElementById("demo").innerHTML = result;
+    }
+  </script>
+</body>
+
+</html>
