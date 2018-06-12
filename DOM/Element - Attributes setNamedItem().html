@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>attributes</title>
+    <style>
+      .democlass {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Hello World</h1>
+
+    <p>Click the button to set the H1's class attribute to "democlass".</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+      function myFunction() {
+        var h = document.getElementsByTagName("H1")[0];
+        var typ = document.createAttribute("class");
+        typ.value = "democlass";
+        h.attributes.setNamedItem(typ);
+      }
+    </script>
+  </body>
+
+</html>
