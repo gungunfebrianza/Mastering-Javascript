@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>attributes</title>
+
+  </head>
+
+  <body>
+    <input type="button" value="OK">
+
+    <p>Click the button below to remove the type attribute of the input element above.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p><strong>Note:</strong> When removing the type attribute of an input element, the element will be of type <em>text</em>, which is the default value.</p>
+
+    <p><strong>Note:</strong> In Internet Explorer 8 and earlier, the removedNamedItem returns the attribute as it should, but it does not remove the attribute.</p>
+
+    <script>
+      function myFunction() {
+        var btn = document.getElementsByTagName("INPUT")[0];
+        btn.attributes.removeNamedItem("type");
+      }
+    </script>
+  </body>
+
+</html>
