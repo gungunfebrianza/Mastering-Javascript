@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>attributes</title>
+    <style>
+      .example {
+        color: red;
+        padding: 5px;
+        width: 150px;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Click the button to see how many attributes the button element has:</p>
+
+    <button onclick="myFunction()" class="example">Try it</button>
+
+    <p><strong>Note:</strong> In Internet Explorer 8 and earlier, the attributes property will return a collection of all possible attributes for the element, and will, in this example, display a much higher number than 1.</p>
+
+    <p>The result should be 2 (the button element's onclick and class attribute).</p>
+
+    <p id="demo"></p>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementsByTagName("BUTTON")[0].attributes.length;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+
+</html>
