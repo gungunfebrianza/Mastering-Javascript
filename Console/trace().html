@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>trace()</title>
+  </head>
+
+  <body>
+    <h1>JavaScript console.trace() Method</h1>
+    <p>Press F12 on your keyboard to view the result in the console view.</p>
+    <p>By clicking the button, a function will be executed, which will execute another function, which will execute the console.trace() method, which will display this trace in the console.view.</p>
+    <button onclick="myFunction()">Start Trace</button>
+
+    <script>
+      //The console.trace() method displays a trace that show how the code ended up at a certain point.
+      function myFunction() {
+        myOtherFunction();
+      }
+
+      function myOtherFunction() {
+        console.trace();
+      }
+    </script>
+  </body>
+
+</html>
