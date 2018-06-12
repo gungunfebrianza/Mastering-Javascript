@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>attributes</title>
+  </head>
+
+  <body>
+    <p>Click the button to see how many attributes the button element have.</p>
+
+    <button id="myBtn" onclick="myFunction()">Try it</button>
+    <p>The result should be 2 (the button element's id and onclick attributes).</p>
+    <p><strong>Note:</strong> In Internet Explorer 8 and earlier, the attributes property will return a collection of all <em>possible</em> attributes for the element, and will, in this example, display a much higher number than 2.</p>
+    <p id="demo"></p>
+
+    <script>
+      /*
+          The attributes property returns a collection of the specified node's attributes, as a NamedNodeMap object.
+          The nodes can be accessed by index numbers, and the index starts at 0.
+
+          Tip: Numerical indexing is useful for going through all of an element's attributes:
+          You can use the length property of the NamedNodeMap object to determine the number of attributes,
+          then you can loop through all attributes nodes and extract the info you want.
+
+          Tip: HTML attributes are attribute nodes, with all the properties and methods available for the Attribute object.
+          https://www.w3schools.com/jsref/dom_obj_attributes.asp
+
+          Return Value: 	A NamedNodeMap object, representing a collection of node's attributes
+          */
+      function myFunction() {
+        var x = document.getElementById("myBtn").attributes.length;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+
+</html>
