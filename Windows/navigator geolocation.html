@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>geolocation</title>
+  </head>
+
+  <body>
+    <p>Click the button to get your coordinates.</p>
+
+    <button onclick="getLocation()">Try It</button>
+
+    <p><strong>Note:</strong> The geolocation property is not supported in IE8 and earlier versions.</p>
+
+    <p id="demo"></p>
+
+    <script>
+      /*Definition:
+                The geolocation property returns a Geolocation object that can be used to locate the user's position.
+                Since this can compromise user privacy, the position is not available unless the user approves it.
+                Note: This property is read-only.
+                */
+      var x = document.getElementById("demo");
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+
+      function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+          "<br>Longitude: " + position.coords.longitude;
+      }
+    </script>
+
+  </body>
+
+</html>
