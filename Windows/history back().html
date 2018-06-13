@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>history back()</title>
+  </head>
+
+  <body>
+
+    <button onclick="goBack()">Go Back</button>
+
+    <p>Notice that clicking on the Back button here will not result in any action, because there is no previous URL in the history list.</p>
+
+    <script>
+      /*Definition :
+          The history object contains the URLs visited by the user (within a browser window).
+          The history object is part of the window object and is accessed through the window.history property.
+          Note: There is no public standard that applies to the history object,
+          but all major browsers support it.*/
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+  </body>
+
+</html>
