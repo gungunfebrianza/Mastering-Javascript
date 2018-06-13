@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>navigator</title>
+  </head>
+
+  <body>
+    <p>Click the button to display the user-agent header sent by the browser to the server.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      /*Definition:
+          The userAgent property returns the value of the user-agent header sent by the browser to the server.
+          The value returned, contains information about the name, version and platform of the browser.    
+          Note: This property is read-only.
+          */
+      function myFunction() {
+        var x = "User-agent header sent: " + navigator.userAgent;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+
+  </body>
+
+</html>
