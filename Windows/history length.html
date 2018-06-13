@@ -14,6 +14,14 @@
     <p><strong>Note:</strong> This example is opened in a new frame and will be treated as a new "session".</p>
 
     <script>
+      /*Definition :
+          The length property returns the number of URLs in the history list of the current browser window.
+          The property returns at least 1, because the list includes the currently loaded page.
+          Tip: This property is useful to find out how many pages the user has visited in the current browsing session.
+          Note: Internet Explorer and Opera start at 0, while Firefox, Chrome, and Safari start at 1.
+          Note: Maximum length is 50.  
+          Note: This property is read-only.
+          */
       var x = history.length;
       document.getElementById("demo").innerHTML = x;
     </script>
