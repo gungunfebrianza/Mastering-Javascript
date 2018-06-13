@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>open()</title>
+  </head>
+
+  <body>
+    <p>Click the button to create a window and then display the name of the new window.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+      function myFunction() {
+        var myWindow = window.open("", "MsgWindow", "width=200,height=100");
+        myWindow.document.write("<p>This window's name is: " + myWindow.name + "</p>");
+      }
+    </script>
+  </body>
+
+</html>
