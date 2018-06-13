@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>location</title>
+  </head>
+
+  <body>
+    <button onclick="myFunction()">Load new document</button>
+
+    <script>
+      /*Definition :
+          The assign() method loads a new document.
+          The difference between this method and replace(), is that replace()
+          removes the URL of the current document from the document history, meaning
+          that it is not possible to use the "back" button to navigate back to the original document.
+          */
+      function myFunction() {
+        location.assign("https://www.facebook.com/papabitcoin");
+      }
+    </script>
+  </body>
+
+</html>
