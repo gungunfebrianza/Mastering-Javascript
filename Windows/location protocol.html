@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>location</title>
+  </head>
+
+  <body>
+    <p>Click the button to return the protocol portion of the current URL.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      /*Definition:
+          The protocol property sets or returns the protocol of the current URL, including the colon (:).
+
+          The protocol is a standard that specifies how data are transmitted between computers.
+          */
+      function myFunction() {
+        var x = location.protocol;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+
+  </body>
+
+</html>
