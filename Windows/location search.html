@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>location</title>
+  </head>
+
+  <body>
+    <p>Click the button to set the anchor part of the current URL to #part5</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      /*Definition:
+                The search property sets or returns the querystring part of a URL, including the question mark (?).
+                The querystring part is the part of the URL after the question mark (?). This is often used for parameter passing.
+
+                Return the querystring part of a URL. Assume that the current URL is https://www.w3schools.com/submit.htm?email=someone@example.com:
+                var x = location.search;
+                     
+                The result of x will be:
+                ?email=someone@example.com
+            */
+      function myFunction() {
+        var x = location.search;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+
+</html>
