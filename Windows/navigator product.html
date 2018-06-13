@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>navigator</title>
+  </head>
+
+  <body>
+    <p>Click the button to display the engine name of the browser.</p>
+    <button onclick="myFunction()">Try it</button>
+
+    <p>The navigator.product property is not supported in IE10 and earlier versions, or Opera 12 and earlier versions.</p>
+
+    <p id="demo"></p>
+
+    <script>
+      /*Definition
+          The product property returns the engine (product) name of the browser.
+          Note: This property may not work as expected: All browsers returns "Gecko".
+
+          Note: This property is read-only.*/
+      function myFunction() {
+        var x = "Browser's Engine Name: " + navigator.product;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+
+  </body>
+
+</html>
