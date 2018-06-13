@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>name()</title>
+  </head>
+
+  <body>
+    <p>Click the button to set the name of the window to "myWindowName".</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      function myFunction() {
+        window.name = "myWindowName";
+        var x = "This window's name is now: " + window.name;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+
+</html>
