@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>location</title>
+  </head>
+
+  <body>
+    <p>Click the button to set the anchor part of the current URL to #part5</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      /*Definition:
+          Return the anchor part of a URL. Assume that the current URL is http://www.example.com/test.htm#part2:
+          The hash property sets or returns the anchor part of a URL, including the hash sign (#).
+          Note: When this property is used to set the anchor part, do not include the hash sign (#).
+          */
+      function myFunction() {
+        location.hash = "part5";
+        var x = "The anchor part is now: " + location.hash;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+
+</html>
