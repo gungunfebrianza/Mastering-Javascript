@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>localStorage()</title>
+  </head>
+
+  <body>
+    <div id="result"></div>
+
+    <script>
+      /*Definition :
+          The localStorage and sessionStorage properties allow to save key/value pairs in a web browser.
+          The localStorage object stores data with no expiration date. The data will not be deleted when the browser is closed, and will be available the next day, week, or year.
+          The localStorage property is read-only.
+          */
+      // Check browser support
+      if (typeof(Storage) !== "undefined") {
+        // Store
+        localStorage.setItem("lastname", "Smith");
+        // Retrieve
+        document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+      } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+      }
+    </script>
+  </body>
+
+</html>
