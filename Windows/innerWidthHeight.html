@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>innerWidthHeight</title>
+  </head>
+
+  <body>
+    <p>Click the button to display this window's height and width (NOT including toolbars and scrollbars).</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p><strong>Note:</strong> The innerWidth and innerHeight properties are not supported in IE8 and earlier.</p>
+
+    <p id="demo"></p>
+
+    <script>
+      function myFunction() {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        document.getElementById("demo").innerHTML = "Width: " + w + "<br>Height: " + h;
+      }
+    </script>
+  </body>
+
+</html>
