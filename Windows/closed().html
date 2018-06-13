@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>closed()</title>
+    <script>
+      var myWindow;
+
+      function openWin() {
+        myWindow = window.open("", "myWindow", "width=400, height=200");
+      }
+
+      function closeWin() {
+        if (myWindow) {
+          myWindow.close();
+        }
+      }
+
+      function checkWin() {
+        if (!myWindow) {
+          document.getElementById("msg").innerHTML = "'myWindow' has never been opened!";
+        } else {
+          if (myWindow.closed) {
+            document.getElementById("msg").innerHTML = "'myWindow' has been closed!";
+          } else {
+            document.getElementById("msg").innerHTML = "'myWindow' has not been closed!";
+          }
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <button onclick="openWin()">Open "myWindow"</button>
+    <button onclick="closeWin()">Close "myWindow"</button>
+    <br><br>
+    <button onclick="checkWin()">Has "myWindow" been closed?</button>
+    <br><br>
+    <div id="msg"></div>
+  </body>
+
+</html>
