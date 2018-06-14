@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>lastChild()</title>
+    <style>
+      div {
+        border: 1px solid black;
+        margin: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <p>Click the button get the node name of the DIV's last child node.</p>
+
+    <div id="myDIV">
+      <p>A P element - Second child in div</p>
+      <span>A Span element - Fourth child in div</span>
+    </div>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p><strong>Note:</strong> Whitespace inside elements is considered as text, and text is considered as nodes. Therefore, in this example, the first, third and fifth child of the div element is a #text node.</p>
+
+    <p id="demo"></p>
+
+    <script>
+      /*
+          In this example, we demonstrate how whitespace may interfare with this property.
+          Get the node name of the last child node of a <div> element:
+          */
+      function myFunction() {
+        var x = document.getElementById("myDIV").lastChild.nodeName;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+
+</html>
