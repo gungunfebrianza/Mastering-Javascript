@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>moveBy()</title>
+  </head>
+
+  <body>
+    <p>Open "myWindow" and move the new window 250px relative to its current position:</p>
+
+    <button onclick="openWin()">Open "myWindow"</button>
+    <button onclick="moveWin()">Move "myWindow"</button>
+
+    <script>
+      var myWindow;
+
+      function openWin() {
+        myWindow = window.open("", "myWindow", "width=200, height=100");
+        myWindow.document.write("<p>This is 'myWindow'</p>");
+      }
+
+      function moveWin() {
+        myWindow.moveBy(250, 250);
+        myWindow.focus();
+      }
+    </script>
+  </body>
+
+</html>
