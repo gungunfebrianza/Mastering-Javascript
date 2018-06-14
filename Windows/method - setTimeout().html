@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>setTimeout</title>
+  </head>
+
+  <body>
+    <p>Click the button to wait 3 seconds, then alert "Hello".</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+      /*Definition :
+          The setTimeout() method calls a function or evaluates an expression after a specified number of milliseconds.
+          Tip: 1000 ms = 1 second.
+          Tip: The function is only executed once. If you need to repeat execution, use the setInterval() method.
+          Tip: Use the clearTimeout() method to prevent the function from running.
+          */
+      function myFunction() {
+        setTimeout(function() {
+          alert("Hello");
+        }, 3000);
+      }
+    </script>
+  </body>
+
+</html>
