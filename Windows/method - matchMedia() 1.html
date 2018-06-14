@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>matchMedia()</title>
+  </head>
+
+  <body>
+    <p>Click the button to find out if the screen/viewport is less than or greater than 700 pixels wide.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("demo");
+        if (window.matchMedia("(max-width: 700px)").matches) {
+          x.innerHTML = "The screen is less than, or equal to, 700 pixels wide.";
+        } else {
+          x.innerHTML = "The screen is at least 700 pixels wide.";
+        }
+      }
+    </script>
+  </body>
+
+</html>
