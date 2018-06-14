@@ -7,24 +7,35 @@
   </head>
 
   <body>
-    <p>Click the first button to alert "Hello" after waiting 3 seconds.</p>
-    <p>Click the second button to prevent the first function to execute. (You must click it before the 3 seconds are up.)</p>
+    <button onclick="startCount()">Start count!</button>
+    <input type="text" id="txt">
+    <button onclick="stopCount()">Stop count!</button>
 
-    <button onclick="myFunction()">Try it</button>
-    <button onclick="myStopFunction()">Stop the alert</button>
+    <p>
+      Click on the "Start count!" button above to start the timer. The input field will count forever, starting at 0. Click on the "Stop count!" button to stop the counting. Click on the "Start count!" button to start the timer again.
+    </p>
 
     <script>
-      //The clearTimeout() method clears a timer set with the setTimeout() method.
-      var myVar;
+      var c = 0;
+      var t;
+      var timer_is_on = 0;
 
-      function myFunction() {
-        myVar = setTimeout(function() {
-          alert("Hello");
-        }, 3000);
+      function timedCount() {
+        document.getElementById("txt").value = c;
+        c = c + 1;
+        t = setTimeout(timedCount, 1000);
       }
 
-      function myStopFunction() {
-        clearTimeout(myVar);
+      function startCount() {
+        if (!timer_is_on) {
+          timer_is_on = 1;
+          timedCount();
+        }
+      }
+
+      function stopCount() {
+        clearTimeout(t);
+        timer_is_on = 0;
       }
     </script>
   </body>
