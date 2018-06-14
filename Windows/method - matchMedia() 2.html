@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>matchMedia()</title>
+  </head>
+
+  <body>
+    <p>If the viewport is less than, or equal to, 700 pixels wide, the background color will be yellow. If it is greater than 700, it will change to pink.</p>
+    <p>Resize the browser window to see the effect.</p>
+
+    <script>
+      function myFunction(x) {
+        if (x.matches) { // If media query matches
+          document.body.style.backgroundColor = "yellow";
+        } else {
+          document.body.style.backgroundColor = "pink";
+        }
+      }
+
+      var x = window.matchMedia("(max-width: 700px)")
+      myFunction(x) // Call listener function at run time
+      x.addListener(myFunction) // Attach listener function on state changes
+    </script>
+  </body>
+
+</html>

@@ -14,6 +14,23 @@
     <p id="demo"></p>
 
     <script>
+      /*Definition :
+          The window.matchMedia() method returns a MediaQueryList object representing the results of the specified CSS media query string.
+          The value of the matchMedia() method can be any of the media features of the CSS @media rule, like min-height, min-width, orientation, etc.
+          The MediaQueryList object has two properties and two methods:
+
+          Property 	Description
+          matches 	Used to check the results of a query. Returns a boolean value: true if the document matches the media query list, otherwise false
+          media 	A String, representing the serialized media query list
+
+          The first example on this page only runs the specified CSS media query and compares it to the current window state once.
+          To use window.matchMedia() in a responsive manner, to make your code react to a CSS media query whenever the window state changes,
+          you can use its methods/event handlers (See "More Examples" below):
+          
+          Method 	Description
+          addListener(functionref) 	Adds a new listener function, which is executed whenever the media query's evaluated result changes
+          removeListener(functionref) 	Removes a previously added listener function from the media query list. Does nothing if the specified listener is not already in the list
+          */
       function myFunction() {
         var x = document.getElementById("demo");
         if (window.matchMedia("(max-width: 700px)").matches) {
