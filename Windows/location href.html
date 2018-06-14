@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>location</title>
+  </head>
+
+  <body>
+    <p>Click the button to display the entire URL of the current page.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      //The href property sets or returns the entire URL of the current page.
+      function myFunction() {
+        var x = location.href;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+
+</html>
