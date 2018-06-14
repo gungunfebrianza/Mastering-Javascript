@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>atob</title>
+  </head>
+
+  <body>
+    <p>Click the button to decode a base-64 encoded string.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p><strong>Note:</strong> The atob() method is not supported in IE9 and earlier.</p>
+
+    <p id="demo"></p>
+
+    <script>
+      /*Definition:
+          The atob() method decodes a base-64 encoded string.
+          This method decodes a string of data which has been encoded by the btoa() method.
+          */
+      function myFunction() {
+        var str = "Hello World!";
+        var enc = window.btoa(str);
+        var dec = window.atob(enc);
+
+        var res = "Encoded String: " + enc + "<br>" + "Decoded String: " + dec;
+        document.getElementById("demo").innerHTML = res;
+      }
+    </script>
+  </body>
+
+</html>
