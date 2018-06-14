@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>resizeBy()</title>
+  </head>
+
+  <body>
+    <p>Open a new window, and resize the width and height to 250px:</p>
+    <p><b>Tip:</b> Press the "Resize window" multiple times (the window will increase 250px for each press).</p>
+
+    <button onclick="openWin()">Create window</button>
+    <button onclick="resizeWin()">Resize window</button>
+
+    <script>
+      var myWindow;
+
+      function openWin() {
+        myWindow = window.open("", "", "width=100, height=100");
+      }
+
+      function resizeWin() {
+        myWindow.resizeBy(250, 250);
+        myWindow.focus();
+      }
+    </script>
+  </body>
+
+</html>
