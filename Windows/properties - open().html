@@ -7,14 +7,18 @@
   </head>
 
   <body>
-    <p>Click the button to create a window and then display the name of the new window.</p>
-
-    <button onclick="myFunction()">Try it</button>
+    <button onclick="openWin()">Open Facebook in a new window</button>
+    <button onclick="closeWin()">Close the new window (Facebook.com)</button>
 
     <script>
-      function myFunction() {
-        var myWindow = window.open("", "MsgWindow", "width=200,height=100");
-        myWindow.document.write("<p>This window's name is: " + myWindow.name + "</p>");
+      var myWindow;
+
+      function openWin() {
+        myWindow = window.open("https://www.facebook.com/papabitcoin", "_blank", "width=500, height=500");
+      }
+
+      function closeWin() {
+        myWindow.close();
       }
     </script>
   </body>
