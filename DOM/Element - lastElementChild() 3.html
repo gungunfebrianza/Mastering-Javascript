@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>lastElementChild()</title>
+    <style>
+      div {
+        border: 1px solid black;
+        margin: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <p>Click the button to get the tag name of the DIV's last child element.</p>
+
+    <div id="myDIV">
+      <p>A P element - First child in div</p>
+      <span>A Span element - Last child in div</span>
+    </div>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p><strong>Note:</strong> The lastElementChild property is not supported in IE8 and earlier versions.</p>
+
+    <p id="demo"></p>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myDIV").lastElementChild.tagName;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+
+</html>
