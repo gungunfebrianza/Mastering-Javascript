@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>focus()</title>
+  </head>
+
+  <body>
+    <p>Click the button to open a new window, and assure that the new window GETS focus (send the new window to the front).</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+      //The focus() method sets focus to the current window. 
+      function myFunction() {
+        var myWindow = window.open("", "", "width=200,height=100");
+        myWindow.document.write("<p>A new window!</p>");
+        myWindow.focus();
+      }
+    </script>
+  </body>
+
+</html>
