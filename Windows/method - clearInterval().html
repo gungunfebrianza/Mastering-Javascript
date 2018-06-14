@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>clearInterval()</title>
+  </head>
+
+  <body>
+    <p>A script on this page starts this clock:</p>
+
+    <p id="demo"></p>
+
+    <button onclick="myStopFunction()">Stop time</button>
+
+    <script>
+      //The clearInterval() method clears a timer set with the setInterval() method.
+      var myVar = setInterval(myTimer, 1000);
+
+      function myTimer() {
+        var d = new Date();
+        var t = d.toLocaleTimeString();
+        document.getElementById("demo").innerHTML = t;
+      }
+
+      function myStopFunction() {
+        clearInterval(myVar);
+      }
+    </script>
+
+  </body>
+
+</html>
