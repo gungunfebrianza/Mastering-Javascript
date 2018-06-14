@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>getComputedStyle()</title>
+    <style>
+      div::first-letter {
+        font-size: xx-large;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <p>Click the button to get the computed font size for the first letter in the test div.</p>
+    <p><button onclick="myFunction()">Try it</button></p>
+    <div id="test" style="height: 50px;background-color: lightblue;">Test Div</div>
+    <p>The computed font size for div::first-letter in the test div is: <span id="demo"></span></p>
+
+    <script>
+      function myFunction() {
+        var elem = document.getElementById("test");
+        var theCSSprop = window.getComputedStyle(elem, "first-letter").getPropertyValue("font-size");
+        document.getElementById("demo").innerHTML = theCSSprop;
+      }
+    </script>
+  </body>
+
+</html>
