@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>lastChild()</title>
+    <style>
+      div {
+        border: 1px solid black;
+        margin: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <p>Click the button to get the node name of the DIV's last child node.</p>
+
+    <div id="myDIV">
+      <p>A P element - First child in div</p><span>A Span element - Last child in div</span></div>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      //However, if we remove the whitespace from the source, there are no #text nodes in <div>, which will make the <span> element the last child node:
+      function myFunction() {
+        var x = document.getElementById("myDIV").lastChild.nodeName;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+
+</html>
