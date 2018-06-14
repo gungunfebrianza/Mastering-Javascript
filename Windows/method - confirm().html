@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>confirm()</title>
+  </head>
+
+  <body>
+    <p>Click the button to display a confirm box.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      /*Definition :
+          The confirm() method displays a dialog box with a specified message, along with an OK and a Cancel button.
+          A confirm box is often used if you want the user to verify or accept something.
+          Note: The confirm box takes the focus away from the current window, and forces the browser to read the message.
+          Do not overuse this method, as it prevents the user from accessing other parts of the page until the box is closed.
+          The confirm() method returns true if the user clicked "OK", and false otherwise.
+          */
+      function myFunction() {
+        var txt;
+        var r = confirm("Press a button!");
+        if (r == true) {
+          txt = "You pressed OK!";
+        } else {
+          txt = "You pressed Cancel!";
+        }
+        document.getElementById("demo").innerHTML = txt;
+      }
+    </script>
+  </body>
+
+</html>
