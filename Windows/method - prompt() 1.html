@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>prompt()</title>
+  </head>
+
+  <body>
+    <p>Click the button to demonstrate the prompt box.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      /*Definition :
+          The prompt() method displays a dialog box that prompts the visitor for input.
+          A prompt box is often used if you want the user to input a value before entering a page.
+          Note: When a prompt box pops up, the user will have to click either "OK" or "Cancel" to proceed after entering an input value.
+          Do not overuse this method, as it prevents the user from accessing other parts of the page until the box is closed.
+          The prompt() method returns the input value if the user clicks "OK". If the user clicks "cancel" the method returns null.
+
+          Return Value: 	A String. If the user clicks "OK", the input value is returned.
+          If the user clicks "cancel", null is returned. If the user clicks OK without entering any text, an empty string is returned.
+          */
+      function myFunction() {
+        var person = prompt("Please enter your name", "Harry Potter");
+        if (person != null) {
+          document.getElementById("demo").innerHTML =
+            "Hello " + person + "! How are you today?";
+        }
+      }
+    </script>
+  </body>
+
+</html>
