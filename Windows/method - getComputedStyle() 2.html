@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>getComputedStyle()</title>
+  </head>
+
+  <body>
+    <p>Click the button to get all the computed styles for the test div.</p>
+    <p><button onclick="myFunction()">Try it</button></p>
+    <div id="test" style="height: 50px;background-color: lightblue;">Test Div</div>
+    <p>The computed styles for the test div are: <br><span id="demo"></span></p>
+
+    <script>
+      function myFunction() {
+        var elem = document.getElementById("test");
+        var txt = "";
+        cssObj = window.getComputedStyle(elem, null)
+
+        for (i = 0; i < cssObj.length; i++) {
+          cssObjProp = cssObj.item(i)
+          txt += cssObjProp + " = " + cssObj.getPropertyValue(cssObjProp) + "<br>";
+        }
+        document.getElementById("demo").innerHTML = txt;
+      }
+    </script>
+  </body>
+
+</html>
