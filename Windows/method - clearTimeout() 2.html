@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>clearTimeout()</title>
+  </head>
+
+  <body>
+    <p>Click the first button to alert "Hello" after waiting 3 seconds.</p>
+    <p>Click the second button to prevent the first function to execute. (You must click it before the 3 seconds are up.)</p>
+
+    <button onclick="myFunction()">Try it</button>
+    <button onclick="myStopFunction()">Stop the alert</button>
+
+    <script>
+      //The clearTimeout() method clears a timer set with the setTimeout() method.
+      var myVar;
+
+      function myFunction() {
+        myVar = setTimeout(function() {
+          alert("Hello");
+        }, 3000);
+      }
+
+      function myStopFunction() {
+        clearTimeout(myVar);
+      }
+    </script>
+  </body>
+
+</html>
