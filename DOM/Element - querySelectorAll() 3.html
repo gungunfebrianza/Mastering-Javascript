@@ -13,25 +13,26 @@
   </head>
 
   <body>
-
     <div id="myDIV">
       <h2 class="example">A heading with class="example" in div</h2>
-      <p class="example">A paragraph with class="example" in div.</p>
-      <p class="example">Another paragraph with class="example" in div.</p>
+      <p class="example">A p element with class="example" in a div.</p>
+      <p class="example">Another p element with class="example" in a div.</p>
+      <p>A p element in div with a <span class="example">span element with class="example"</span> inside of it.</p>
     </div>
 
-    <p>Click the button to find out how many elements with class "example" there are in DIV.</p>
+    <p>Click the button to add a background color to all elements with class="example" inside DIV.</p>
 
     <button onclick="myFunction()">Try it</button>
 
     <p><strong>Note:</strong> The querySelectorAll() method is not supported in Internet Explorer 8 and earlier versions.</p>
 
-    <p id="demo"></p>
-
     <script>
       function myFunction() {
         var x = document.getElementById("myDIV").querySelectorAll(".example");
-        document.getElementById("demo").innerHTML = x.length;
+        var i;
+        for (i = 0; i < x.length; i++) {
+          x[i].style.backgroundColor = "red";
+        }
       }
     </script>
   </body>
