@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>setInterval()</title>
+  </head>
+
+  <body>
+    <p>Click the button to wait 3 seconds, then alert "Hello".</p>
+    <p>After clicking away the alert box, an new alert box will appear in 3 seconds. This goes on forever...</p>
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+      /*Definition :
+          The setInterval() method calls a function or evaluates an expression at specified intervals (in milliseconds).
+          The setInterval() method will continue calling the function until clearInterval() is called, or the window is closed.
+          The ID value returned by setInterval() is used as the parameter for the clearInterval() method.
+          Tip: 1000 ms = 1 second.
+          Tip: To execute a function only once, after a specified number of milliseconds, use the setTimeout() method.
+          */
+      function myFunction() {
+        setInterval(function() {
+          alert("Hello");
+        }, 3000);
+      }
+    </script>
+  </body>
+
+</html>
