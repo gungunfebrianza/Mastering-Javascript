@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>getComputedStyle()</title>
+  </head>
+
+  <body>
+    <p>Click the button to get the computed background color for the test div.</p>
+    <p><button onclick="myFunction()">Try it</button></p>
+    <div id="test" style="height: 50px;background-color: lightblue;">Test Div</div>
+    <p>The computed background color for the test div is: <span id="demo"></span></p>
+
+    <script>
+      /*Definition :
+          The getComputedStyle() method gets all the actual (computed) CSS property and values of the specified element.
+          The computed style is the style actually used in displaying the element, after "stylings" from multiple sources have been applied.
+          Style sources can include: internal style sheets, external style sheets, inherited styles and browser default styles.
+          The getComputedStyle() method returns a CSSStyleDeclaration object.
+          */
+      function myFunction() {
+        var elem = document.getElementById("test");
+        var theCSSprop = window.getComputedStyle(elem, null).getPropertyValue("background-color");
+        document.getElementById("demo").innerHTML = theCSSprop;
+      }
+    </script>
+  </body>
+
+</html>
