@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>lastElementChild()</title>
+  </head>
+
+  <body>
+    <p>Click the button to get the text of the last child element of the select element.</p>
+
+    <select id="mySelect" size="4">
+      <option>Audi</option>
+      <option>BMW</option>
+      <option>Saab</option>
+      <option>Volvo</option>
+      </select>
+    <br><br>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p><strong>Note:</strong> The lastElementChild property is not supported in IE8 and earlier versions.</p>
+
+    <p id="demo"></p>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("mySelect").lastElementChild.text;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+
+</html>

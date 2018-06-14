@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>lastElementChild()</title>
+  </head>
+
+  <body>
+    <p>Example list:</p>
+
+    <ul id="myList">
+      <li>Coffee</li>
+      <li>Tea</li>
+    </ul>
+
+    <p>Click the button to get the HTML content of the list's last child element.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p><strong>Note:</strong> The lastElementChild property is not supported in IE8 and earlier versions.</p>
+
+    <p id="demo"></p>
+
+    <script>
+      /*Definition :
+          The lastElementChild property returns the last child element of the specified element.
+          The difference between this property and lastChild, is that lastChild returns the last child node as an element node, a text node or a comment node (depending on which one's last), while lastElementChild returns the last child node as an element node (ignores text and comment nodes).
+          This property is read-only.
+          Tip: Use the children property to return any child element of a specified element.
+          Tip: To return the first child element of a specified element, use the firstElementChild property.*/
+      function myFunction() {
+        var list = document.getElementById("myList").lastElementChild.innerHTML;
+        document.getElementById("demo").innerHTML = list;
+      }
+    </script>
+  </body>
+
+</html>
