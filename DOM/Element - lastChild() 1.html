@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>lastChild()</title>
+  </head>
+
+  <body>
+    <p>Example list:</p>
+    <ul id="myList">
+      <li>Coffee</li>
+      <li>Tea</li>
+    </ul>
+
+    <p>Click the button to get the HTML content of the list's last child node.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p><strong>Note:</strong> Whitespace inside elements is considered as text, and text is considered as nodes.</p>
+
+    <p>If you add whitespace before the closing UL element, the result will be "undefined".</p>
+
+    <p id="demo"></p>
+
+    <script>
+      /*Definition :
+            The lastChild property returns the last child node of the specified node, as a Node object.
+            The difference between this property and lastElementChild, is that lastChild returns the last child node as an element node, a text node or a comment node (depending on which one's last), while lastElementChild returns the last child node as an element node (ignores text and comment nodes).
+            Note: Whitespace inside elements is considered as text, and text is considered as nodes (See "More Examples").
+            This property is read-only.
+            Tip: Use the element.childNodes property to return any child node of a specified node.
+            Tip: To return the first child node of a specified node, use the firstChild property.
+            */
+      function myFunction() {
+        var list = document.getElementById("myList").lastChild.innerHTML;
+        document.getElementById("demo").innerHTML = list;
+      }
+    </script>
+  </body>
+
+</html>
