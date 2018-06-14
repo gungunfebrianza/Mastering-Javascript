@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>nextSibling()</title>
+  </head>
+
+  <body>
+    <p>Example list:</p>
+
+    <ul>
+      <li id="item1">Coffee (first li)</li>
+      <li id="item2">Tea (second li)</li>
+    </ul>
+
+    <p>Click the button to get the HTML content of the next sibling of the first list item.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p><strong>Note:</strong> Whitespace inside elements is considered as text, and text is considered as nodes.</p>
+
+    <p>If you add whitespace between the two li elements, the result will be "undefined".</p>
+
+    <p id="demo"></p>
+
+    <script>
+      /*Definition:
+          The nextSibling property returns the node immediately following the specified node, in the same tree level.
+          The returned node is returned as a Node object.
+          The difference between this property and nextElementSibling, is that nextSibling returns the next sibling node as an element node,
+          a text node or a comment node, while nextElementSibling returns the next sibling node as an element node (ignores text and comment nodes).
+          This property is read-only.
+          Tip: Use the previousSibling property to return the previous node of the specified node, in the same tree level.
+          Tip: Use the childNodes property to return any child node of a specified node.
+          */
+      function myFunction() {
+        var x = document.getElementById("item1").nextSibling.innerHTML;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+
+</html>
