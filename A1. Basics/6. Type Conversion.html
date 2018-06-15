@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-  <meta charset="utf-8">
-  <title>Type Conversion</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Type Conversion</title>
+  </head>
 
-<body>
+  <body>
 
-</body>
-<script type="text/javascript">
-  //convert to string
-  let value = true;
-  console.log(typeof value); // boolean
+  </body>
+  <script type="text/javascript">
+    //convert to string
+    let value = true;
+    console.log(typeof value); // boolean
 
-  value = String(value); // now value is a string "true"
-  console.log(typeof value); // string
+    value = String(value); // now value is a string "true"
+    console.log(typeof value); // string
 
-  //Convert to Number
-  let str = "123";
-  let num = Number(str); // becomes a number 123
-  console.log(typeof num); // string
+    //Convert to Number
+    let str = "123";
+    let num = Number(str); // becomes a number 123
+    console.log(typeof num); // string
 
-  let age = Number("an arbitrary string instead of a number");
-  let nan = Number(age);
-  console.log(age); // NaN
-  console.log(typeof(age));
-</script>
+    let age = Number("an arbitrary string instead of a number");
+    let nan = Number(age);
+    console.log(age); // NaN
+    console.log(typeof(age));
+  </script>
 
 </html>

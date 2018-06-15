@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-  <meta charset="utf-8">
-  <title>Logical Operator</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Logical Operator</title>
+  </head>
 
-<body>
-  <p>The AND operator (&&) returns true if both expressions are true, otherwise it returns false.</p>
-  <p id="and"></p>
+  <body>
+    <p>The AND operator (&&) returns true if both expressions are true, otherwise it returns false.</p>
+    <p id="and"></p>
 
-  <p>The OR operator (||) returns true if one or both expressions are true, otherwise it returns false.</p>
-  <p id="or"></p>
+    <p>The OR operator (||) returns true if one or both expressions are true, otherwise it returns false.</p>
+    <p id="or"></p>
 
-  <p>The NOT operator (!) returns true for false statements and false for true statements.</p>
-  <p id="not"></p>
+    <p>The NOT operator (!) returns true for false statements and false for true statements.</p>
+    <p id="not"></p>
 
-</body>
-<script type="text/javascript">
-  var x = 6;
-  var y = 3;
+  </body>
+  <script type="text/javascript">
+    var x = 6;
+    var y = 3;
 
-  document.getElementById("and").innerHTML = (x < 10 && y > 1) + "<br>" + (x < 10 && y < 1);
+    document.getElementById("and").innerHTML = (x < 10 && y > 1) + "<br>" + (x < 10 && y < 1);
 
-  document.getElementById("or").innerHTML =
-    (x == 5 || y == 5) + "<br>" +
-    (x == 6 || y == 0) + "<br>" +
-    (x == 0 || y == 3) + "<br>" +
-    (x == 6 || y == 3);
+    document.getElementById("or").innerHTML =
+      (x == 5 || y == 5) + "<br>" +
+      (x == 6 || y == 0) + "<br>" +
+      (x == 0 || y == 3) + "<br>" +
+      (x == 6 || y == 3);
 
-    document.getElementById("not").innerHTML =
-    !(x === y) + "<br>" +
-    !(x > y);
-</script>
+    document.getElementById("not").innerHTML = !(x === y) + "<br>" +
+      !(x > y);
+  </script>
 
 </html>
