@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="utf-8">
     <title>Method toFixed()</title>
   </head>
+
   <body>
 
   </body>
   <script>
     /*
-    Description
-    This method formats a number with a specific number of digits to the right of the decimal.
+        Description
+        This method formats a number with a specific number of digits to the right of the decimal.
 
-    Syntax
-    Its syntax is as follows −
-    number.toFixed( [digits] )
+        Syntax
+        Its syntax is as follows −
+        number.toFixed( [digits] )
 
-    Parameter Details
-    digits − The number of digits to appear after the decimal point.
-    Return Value
+        Parameter Details
+        digits − The number of digits to appear after the decimal point.
+        Return Value
 
-    A string representation of number that does not use exponential notation
-    and has the exact number of digits after the decimal place.
-    */
-    var num=177.1234;
+        A string representation of number that does not use exponential notation
+        and has the exact number of digits after the decimal place.
+        */
+    var num = 177.1234;
     document.write("num.toFixed() is : " + num.toFixed());
     document.write("<br />");
 
@@ -36,6 +38,7 @@
     document.write("(1.23e+20).toFixed(2) is:" + (1.23e+20).toFixed(2));
     document.write("<br />");
 
-    document.write("(1.23e-10).toFixed(2) is : " + (1.23e-10).toFixed(2));     
+    document.write("(1.23e-10).toFixed(2) is : " + (1.23e-10).toFixed(2));
   </script>
+
 </html>

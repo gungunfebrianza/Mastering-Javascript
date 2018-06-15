@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-  <meta charset="utf-8">
-  <title>Access Array Element</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Access Array Element</title>
+  </head>
 
-<body>
-  <h2>JavaScript Arrays</h2>
+  <body>
+    <h2>JavaScript Arrays</h2>
 
-  <p>JavaScript array elements are accesses using numeric indexes (starting from 0).</p>
+    <p>JavaScript array elements are accesses using numeric indexes (starting from 0).</p>
 
-  <p id="A"></p>
-  <p id="B"></p>
-  <p id="C"></p>
-  <p id="D"></p>
-  <p id="E"></p>
-</body>
-<script>
-  var cars = ["Saab", "Volvo", "BMW"];
-  document.getElementById("A").innerHTML = cars[1];
+    <p id="A"></p>
+    <p id="B"></p>
+    <p id="C"></p>
+    <p id="D"></p>
+    <p id="E"></p>
+  </body>
+  <script>
+    var cars = ["Saab", "Volvo", "BMW"];
+    document.getElementById("A").innerHTML = cars[1];
 
-  var litMultiArray = [[1,2], 3, 4];
-  document.getElementById("B").innerHTML = litMultiArray[0];
-  document.getElementById("C").innerHTML = litMultiArray[0][0];
-  document.getElementById("D").innerHTML = litMultiArray[0][1];
-  document.getElementById("E").innerHTML = litMultiArray[1];
-</script>
+    var litMultiArray = [
+      [1, 2], 3, 4
+    ];
+    document.getElementById("B").innerHTML = litMultiArray[0];
+    document.getElementById("C").innerHTML = litMultiArray[0][0];
+    document.getElementById("D").innerHTML = litMultiArray[0][1];
+    document.getElementById("E").innerHTML = litMultiArray[1];
+  </script>
 
 </html>

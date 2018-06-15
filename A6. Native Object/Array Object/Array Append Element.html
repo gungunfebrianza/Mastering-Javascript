@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
-<body>
 
-<h2>JavaScript Arrays</h2>
+  <body>
 
-<p>The length property provides an easy way to append new elements to an array without using the push() method.</p>
+    <h2>JavaScript Arrays</h2>
 
-<button onclick="myFunction()">Try it</button>
+    <p>The length property provides an easy way to append new elements to an array without using the push() method.</p>
 
-<p id="demo"></p>
+    <button onclick="myFunction()">Try it</button>
 
-<script>
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-document.getElementById("demo").innerHTML = fruits;
+    <p id="demo"></p>
 
-function myFunction() {
-    fruits[fruits.length] = "Lemon";
-    document.getElementById("demo").innerHTML = fruits;
-}
-</script>
+    <script>
+      var fruits = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("demo").innerHTML = fruits;
 
-</body>
+      function myFunction() {
+        fruits[fruits.length] = "Lemon";
+        document.getElementById("demo").innerHTML = fruits;
+      }
+    </script>
+
+  </body>
+
 </html>

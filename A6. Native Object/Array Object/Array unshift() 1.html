@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
-<body>
 
-<h2>JavaScript Array Methods</h2>
+  <body>
 
-<h2>unshift()</h2>
+    <h2>JavaScript Array Methods</h2>
 
-<p>The unshift() method adds new elements to the beginning of an array.</p>
+    <h2>unshift()</h2>
 
-<button onclick="myFunction()">Try it</button>
+    <p>The unshift() method adds new elements to the beginning of an array.</p>
 
-<p id="demo"></p>
+    <button onclick="myFunction()">Try it</button>
 
-<script>
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-document.getElementById("demo").innerHTML = fruits;
+    <p id="demo"></p>
 
-function myFunction() {
-    fruits.unshift("Lemon");
-    document.getElementById("demo").innerHTML = fruits;
-}
-</script>
+    <script>
+      var fruits = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("demo").innerHTML = fruits;
 
-</body>
+      function myFunction() {
+        fruits.unshift("Lemon");
+        document.getElementById("demo").innerHTML = fruits;
+      }
+    </script>
+
+  </body>
+
 </html>

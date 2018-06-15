@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-  <meta charset="utf-8">
-  <title>Method search()</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Method search()</title>
+  </head>
 
-<body>
+  <body>
 
-</body>
-<script>
-/*
-This method executes the search for a match between a regular expression and this String object.
+  </body>
+  <script>
+    /*
+    This method executes the search for a match between a regular expression and this String object.
 
-Syntax
-Its syntax is as follows −
-string.search(regexp);
+    Syntax
+    Its syntax is as follows −
+    string.search(regexp);
 
-Argument Details
-  regexp − A regular expression object. If a non-RegExp object obj is passed, it is implicitly converted to a RegExp by using new RegExp(obj).
+    Argument Details
+      regexp − A regular expression object. If a non-RegExp object obj is passed, it is implicitly converted to a RegExp by using new RegExp(obj).
 
-Return Value  
-  If successful, the search returns the index of the regular expression inside the string. Otherwise, it returns -1.
-*/
-  var re = /apples/gi;
-  var str = "Apples are round, and apples are juicy.";
+    Return Value
+      If successful, the search returns the index of the regular expression inside the string. Otherwise, it returns -1.
+    */
+    var re = /apples/gi;
+    var str = "Apples are round, and apples are juicy.";
 
-  if (str.search(re) == -1) {
-    document.write("Does not contain Apples");
-  } else {
-    document.write("Contains Apples");
-  }
-</script>
+    if (str.search(re) == -1) {
+      document.write("Does not contain Apples");
+    } else {
+      document.write("Contains Apples");
+    }
+  </script>
 
 </html>
