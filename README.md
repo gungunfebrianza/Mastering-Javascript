@@ -1,4 +1,4 @@
-# mastering-javascript
+# Mastering Javascript
 From Hero to Zero
 
 
