@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Cookie Properties</title>
+</head>
+
+<body>
+  <p>Click the button to get the cookies associated with the current document.</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <p id="demo"></p>
+</body>
+<script>
+  function myFunction() {
+    var x = document.cookie;
+    document.getElementById("demo").innerHTML = "Cookies associated with this document: " + x;
+  }
+</script>
+
+</html>
