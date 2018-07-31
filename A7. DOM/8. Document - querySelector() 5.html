@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>querySelector() 5</title>
+  <style>
+    a[target] {
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <p>The CSS selector a[target] makes sure that all links with a target attribute gets a yellow background:</p>
+
+  <a href="https://www.marketkoin.com">marketkoin.com</a>
+  <a href="http://www.disney.com" target="_blank">disney.com</a>
+  <a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+
+  <p>Click the button to add a red border to the first link that has a target attribute.</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <script>
+    function myFunction() {
+      document.querySelector("a[target]").style.border = "10px solid red";
+    }
+  </script>
+
+</body>
+
+</html>
