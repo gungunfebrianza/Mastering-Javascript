@@ -8,13 +8,14 @@
 
 <body>
   <h2 class="example">A heading with class="example"</h2>
-  <p class="example">A paragraph with class="example".</p>
+  <p class="b">A paragraph with class="example".</p>
 
   <p>Click the button to add a background color to the first element in the document with class="example".</p>
 
   <button onclick="myFunction()">Try it</button>
 </body>
 <script type="text/javascript">
+  //The querySelector() method returns the first element that matches a specified CSS selector(s) in the document.
   function myFunction() {
     //Get the first element in the document with class="example":
     document.querySelector(".example").style.backgroundColor = "red";
