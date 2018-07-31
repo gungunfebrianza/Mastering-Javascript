@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>querySelector 1</title>
+</head>
+
+<body>
+  <h2 class="example">A heading with class="example"</h2>
+  <p class="example">A paragraph with class="example".</p>
+
+  <p>Click the button to add a background color to the first element in the document with class="example".</p>
+
+  <button onclick="myFunction()">Try it</button>
+</body>
+<script type="text/javascript">
+  function myFunction() {
+    //Get the first element in the document with class="example":
+    document.querySelector(".example").style.backgroundColor = "red";
+  }
+</script>
+
+</html>
