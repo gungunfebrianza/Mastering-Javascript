@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>querySelector() 4</title>
+  <style>
+    div {
+      border: 1px solid black;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h3>H3 element</h3>
+    <p>I am a p element, my parent is a div element.</p>
+  </div>
+
+  <div>
+    <h3>H3 element</h3>
+    <p>I am a p element, my parent is also a div element.</p>
+  </div>
+
+  <p>Click the button to change the background color of the first p element in the document where the parent is a div element.</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <script>
+    function myFunction() {
+      var x = document.querySelector("div > p");
+      x.style.backgroundColor = "red";
+    }
+  </script>
+
+</body>
+
+</html>
