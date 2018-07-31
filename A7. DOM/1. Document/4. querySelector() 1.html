@@ -22,21 +22,21 @@
   <button onclick="myFunction()">Try it</button>
 
   <script>
-  /* Definition :
-  The querySelector() method returns the first child element that matches a specified CSS selector(s) of an element.
-  Note: The querySelector() method only returns the first element that matches the specified selectors.
-  To return all the matches, use the querySelectorAll() method instead.
-  For more information about CSS Selectors :
-  https://www.w3schools.com/css/css_syntax.asp
-  https://www.w3schools.com/cssref/css_selectors.asp
+    /* Definition :
+          The querySelector() method returns the first child element that matches a specified CSS selector(s) of an element.
+          Note: The querySelector() method only returns the first element that matches the specified selectors.
+          To return all the matches, use the querySelectorAll() method instead.
+          For more information about CSS Selectors :
+          https://www.w3schools.com/css/css_syntax.asp
+          https://www.w3schools.com/cssref/css_selectors.asp
 
-  Parameter :
-  CSS selectors 	String 	Required. Specifies one or more CSS selectors to match the element.
-                  These are used to select HTML elements based on their id, classes, types, attributes, values of attributes, etc.
+          Parameter :
+          CSS selectors 	String 	Required. Specifies one or more CSS selectors to match the element.
+                          These are used to select HTML elements based on their id, classes, types, attributes, values of attributes, etc.
 
-  Return Value: 	The first element that matches the specified CSS selector(s).
-                  If no matches are found, null is returned. Throws a SYNTAX_ERR exception if the specified selector(s) is invalid.
-  */
+          Return Value: 	The first element that matches the specified CSS selector(s).
+                          If no matches are found, null is returned. Throws a SYNTAX_ERR exception if the specified selector(s) is invalid.
+          */
     function myFunction() {
       var x = document.getElementById("myDIV");
       x.querySelector(".example").innerHTML = "Hello World!";

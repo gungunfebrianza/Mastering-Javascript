@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
-    <title>querySelectorAll()</title>
-    <style>
-      #myDIV {
-        border: 1px solid black;
-        margin: 5px;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>querySelectorAll()</title>
+  <style>
+    #myDIV {
+      border: 1px solid black;
+      margin: 5px;
+    }
+  </style>
+</head>
 
-  <body>
+<body>
 
-    <div id="myDIV">
-      <h2 class="example">A heading with class="example" in div</h2>
-      <p class="example">A paragraph with class="example" in div.</p>
-      <p class="example">Another paragraph with class="example" in div.</p>
-    </div>
+  <div id="myDIV">
+    <h2 class="example">A heading with class="example" in div</h2>
+    <p class="example">A paragraph with class="example" in div.</p>
+    <p class="example">Another paragraph with class="example" in div.</p>
+  </div>
 
-    <p>Click the button to find out how many elements with class "example" there are in DIV.</p>
+  <p>Click the button to find out how many elements with class "example" there are in DIV.</p>
 
-    <button onclick="myFunction()">Try it</button>
+  <button onclick="myFunction()">Try it</button>
 
-    <p><strong>Note:</strong> The querySelectorAll() method is not supported in Internet Explorer 8 and earlier versions.</p>
+  <p><strong>Note:</strong> The querySelectorAll() method is not supported in Internet Explorer 8 and earlier versions.</p>
 
-    <p id="demo"></p>
+  <p id="demo"></p>
 
-    <script>
-      function myFunction() {
-        var x = document.getElementById("myDIV").querySelectorAll(".example");
-        document.getElementById("demo").innerHTML = x.length;
-      }
-    </script>
-  </body>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myDIV").querySelectorAll(".example");
+      document.getElementById("demo").innerHTML = x.length;
+    }
+  </script>
+</body>
 
 </html>

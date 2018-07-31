@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
-    <title>querySelectorAll()</title>
-    <style>
-      #myDIV {
-        border: 1px solid black;
-        margin: 5px;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>querySelectorAll()</title>
+  <style>
+    #myDIV {
+      border: 1px solid black;
+      margin: 5px;
+    }
+  </style>
+</head>
 
-  <body>
+<body>
 
-    <div id="myDIV">
-      <h2 class="example">A heading with class="example" in div</h2>
-      <p class="example">A paragraph with class="example" in div.</p>
-      <p class="example">Another paragraph with class="example" in div.</p>
-    </div>
+  <div id="myDIV">
+    <h2 class="example">A heading with class="example" in div</h2>
+    <p class="example">A paragraph with class="example" in div.</p>
+    <p class="example">Another paragraph with class="example" in div.</p>
+  </div>
 
-    <p>Click the button to add a background color to the first p element in DIV with class="example" (index 0).</p>
+  <p>Click the button to add a background color to the first p element in DIV with class="example" (index 0).</p>
 
-    <button onclick="myFunction()">Try it</button>
+  <button onclick="myFunction()">Try it</button>
 
-    <p><strong>Note:</strong> The querySelectorAll() method is not supported in Internet Explorer 8 and earlier versions.</p>
+  <p><strong>Note:</strong> The querySelectorAll() method is not supported in Internet Explorer 8 and earlier versions.</p>
 
-    <script>
-      /*Definition :
-          The querySelectorAll() method returns a collection of an element's child elements that match a specified CSS selector(s), as a static NodeList object.
-          The NodeList object represents a collection of nodes. The nodes can be accessed by index numbers. The index starts at 0.
-          Tip: You can use the length property of the NodeList object to determine the number of child nodes that matches the specified selector,
-          then you can loop through all nodes and extract the info you want.
-          For more information about CSS Selectors, visit our CSS Selectors Tutorial and our CSS Selectors Reference.
+  <script>
+    /*Definition :
+              The querySelectorAll() method returns a collection of an element's child elements that match a specified CSS selector(s), as a static NodeList object.
+              The NodeList object represents a collection of nodes. The nodes can be accessed by index numbers. The index starts at 0.
+              Tip: You can use the length property of the NodeList object to determine the number of child nodes that matches the specified selector,
+              then you can loop through all nodes and extract the info you want.
+              For more information about CSS Selectors, visit our CSS Selectors Tutorial and our CSS Selectors Reference.
 
-          Parameter :
-          CSS selectors 	String 	Required. Specifies one or more CSS selectors to match the element.
-                          These are used to select HTML elements based on their id, classes, types, attributes, values of attributes, etc.
-          Return :
-          Return Value: 	A NodeList object, representing all descendant elements of the current element that matches a specified CSS selector(s).
-          The NodeList is a static collection, meaning that changes in the DOM has NO effect in the collection.
-          Note: Throws a SYNTAX_ERR exception if the specified selector(s) is invalid
-          */
-      function myFunction() {
-        var x = document.getElementById("myDIV").querySelectorAll("p.example");
-        x[0].style.backgroundColor = "red";
-      }
-    </script>
-  </body>
+              Parameter :
+              CSS selectors 	String 	Required. Specifies one or more CSS selectors to match the element.
+                              These are used to select HTML elements based on their id, classes, types, attributes, values of attributes, etc.
+              Return :
+              Return Value: 	A NodeList object, representing all descendant elements of the current element that matches a specified CSS selector(s).
+              The NodeList is a static collection, meaning that changes in the DOM has NO effect in the collection.
+              Note: Throws a SYNTAX_ERR exception if the specified selector(s) is invalid
+              */
+    function myFunction() {
+      var x = document.getElementById("myDIV").querySelectorAll("p.example");
+      x[0].style.backgroundColor = "red";
+    }
+  </script>
+</body>
 
 </html>
