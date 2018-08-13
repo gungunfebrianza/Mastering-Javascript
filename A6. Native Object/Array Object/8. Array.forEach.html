@@ -13,16 +13,33 @@
 </body>
 <script>
   /*Array Definition
-  The Array object lets you store multiple values in a single variable.
-  It stores a fixed-size sequential collection of elements of the same type.
-  An array is used to store a collection of data, but it is often more useful
-  to think of an array as a collection of variables of the same type.
-  */
+    The Array object lets you store multiple values in a single variable.
+    It stores a fixed-size sequential collection of elements of the same type.
+    An array is used to store a collection of data, but it is often more useful
+    to think of an array as a collection of variables of the same type.
+    */
   var array1 = ['a', 'b', 'c'];
 
   array1.forEach(function(element) {
     document.getElementById("demo").innerHTML += element + " ";
   });
+
+  /*Syntax
+  arr.forEach(function callback(currentValue[, index[, array]]) {
+    //your iterator
+}[, thisArg]);
+
+callback
+    Function to execute for each element, taking three arguments:
+  */
+
+  /*Example
+  const items = ['item1', 'item2', 'item3'];
+  const copy = [];
+
+  items.forEach(function(item) {
+    copy.push(item)
+  });*/
 
   /*Notes Array Properties
   Property - Description
