@@ -3,26 +3,39 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Array Length</title>
+  <title>Array Push</title>
 </head>
 
 <body>
-  <h2>JavaScript Arrays</h2>
-  <p>The length property returns the length of an array.</p>
+  <h2>JavaScript Array Methods</h2>
+  <h2>push()</h2>
+  <p>The push() method appends a new element to an array.</p>
+
+  <button onclick="myFunction()">Try it</button>
 
   <p id="demo"></p>
-
 </body>
 <script>
-  var fruits = ["Banana", "Orange", "Apple", "Mango"];
-  document.getElementById("demo").innerHTML = fruits.length;
+  /*Array Definition
+  The Array object lets you store multiple values in a single variable.
+  It stores a fixed-size sequential collection of elements of the same type.
+  An array is used to store a collection of data, but it is often more useful
+  to think of an array as a collection of variables of the same type.
+  */
+  var fruits = ["Coconut", "Watermelon", "Grape", "Mango"];
+  document.getElementById("demo").innerHTML = fruits;
+
+  function myFunction() {
+    fruits.push("Banana");
+    document.getElementById("demo").innerHTML = fruits;
+  }
 
   /*Notes Array Properties
-    Property - Description
-    constructor -	Returns the function that created the Array object's prototype
-    length -	Sets or returns the number of elements in an array
-    prototype -	Allows you to add properties and methods to an Array objec
-    */
+  Property - Description
+  constructor -	Returns the function that created the Array object's prototype
+  length -	Sets or returns the number of elements in an array
+  prototype -	Allows you to add properties and methods to an Array objec
+  */
 
   /*Notes Array Methods
   Method -	Description

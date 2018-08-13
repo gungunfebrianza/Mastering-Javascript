@@ -3,27 +3,32 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Looping Array - ForEach</title>
+  <title>Array Length</title>
 </head>
 
 <body>
-  <h2>Looping Arrays- ForEach</h2>
+  <h2>JavaScript Arrays</h2>
+  <p>The length property returns the length of an array.</p>
 
   <p id="demo"></p>
+
 </body>
 <script>
-  var array1 = ['a', 'b', 'c'];
-
-  array1.forEach(function(element) {
-    document.getElementById("demo").innerHTML += element + " ";
-  });
+  /*Array Definition
+  The Array object lets you store multiple values in a single variable.
+  It stores a fixed-size sequential collection of elements of the same type.
+  An array is used to store a collection of data, but it is often more useful
+  to think of an array as a collection of variables of the same type.
+  */
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  document.getElementById("demo").innerHTML = fruits.length;
 
   /*Notes Array Properties
-  Property - Description
-  constructor -	Returns the function that created the Array object's prototype
-  length -	Sets or returns the number of elements in an array
-  prototype -	Allows you to add properties and methods to an Array objec
-  */
+    Property - Description
+    constructor -	Returns the function that created the Array object's prototype
+    length -	Sets or returns the number of elements in an array
+    prototype -	Allows you to add properties and methods to an Array objec
+    */
 
   /*Notes Array Methods
   Method -	Description

@@ -3,21 +3,13 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Access Array Element</title>
+  <title>Looping Array - ForEach</title>
 </head>
 
 <body>
-  <h2>JavaScript Arrays</h2>
+  <h2>Looping Arrays- ForEach</h2>
 
-  <p>JavaScript array elements are accesses using numeric indexes (starting from 0).</p>
-
-  <p id="A"></p>
-  <p id="B"></p>
-  <p id="C"></p>
-  <p id="D"></p>
-  <p id="E"></p>
-  <p id="F"></p>
-  <p id="G"></p>
+  <p id="demo"></p>
 </body>
 <script>
   /*Array Definition
@@ -26,18 +18,11 @@
   An array is used to store a collection of data, but it is often more useful
   to think of an array as a collection of variables of the same type.
   */
-  var cars = ["Lamborghini", "Rubicon", "Porsche"];
-  document.getElementById("A").innerHTML = cars[1];
+  var array1 = ['a', 'b', 'c'];
 
-  var litMultiArray = [
-    [1, 2], 3, 4
-  ];
-  document.getElementById("B").innerHTML = "Lenght Array : " + litMultiArray.length;
-  document.getElementById("C").innerHTML = "Position 1 : " + litMultiArray[0];
-  document.getElementById("D").innerHTML = "Position 2 : " + litMultiArray[1];
-  document.getElementById("E").innerHTML = "Position 3 : " + litMultiArray[2];
-  document.getElementById("E").innerHTML = "Position 1 Sub 1 : " + litMultiArray[0][0];
-  document.getElementById("F").innerHTML = "Position 1 sub 2 : " + litMultiArray[0][1];
+  array1.forEach(function(element) {
+    document.getElementById("demo").innerHTML += element + " ";
+  });
 
   /*Notes Array Properties
   Property - Description
