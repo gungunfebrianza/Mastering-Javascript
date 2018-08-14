@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Add Object Method</title>
+</head>
+
+<body>
+  <p id="demo"></p>
+</body>
+<script>
+  var person = {
+    firstName: "John",
+    lastName: "Doe",
+    id: 5566,
+  };
+  person.name = function() {
+    return this.firstName + " " + this.lastName;
+  };
+
+  document.getElementById("demo").innerHTML =
+    "My father is " + person.name();
+</script>
+
+</html>
