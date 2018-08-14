@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array from()</title>
+</head>
+
+<body>
+  <h1>Array.from()</h1>
+
+  <p>Create an Array from a String:</p>
+
+  <p id="demo"></p>
+
+  <p><strong>Note:</strong> The from method is not supported in IE 11 (and earlier versions).</p>
+</body>
+
+<script>
+  var myArr = Array.from("ABCDEFG");
+
+  document.getElementById("demo").innerHTML = myArr;
+</script>
+
+</html>
