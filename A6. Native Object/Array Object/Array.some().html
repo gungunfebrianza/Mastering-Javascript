@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array some()</title>
+</head>
+
+<body>
+  <p>Click the button to check if any of the elements in the array has a value of 18 or more.</p>
+  <button onclick="myFunction()">Try it</button>
+  <p id="demo"></p>
+</body>
+<script>
+  /*Definition and Usage
+    The some() method checks if any of the elements in an array pass a test (provided as a function).
+    The some() method executes the function once for each element present in the array:
+        If it finds an array element where the function returns a true value, some() returns true (and does not check the remaining values)
+        Otherwise it returns false
+    Note: some() does not execute the function for array elements without values.
+    Note: some() does not change the original array.
+    */
+
+  /*Syntax:
+  array.some(function(currentValue, index, arr), thisValue)
+
+  Parameter:
+  currentValue 	Required. The value of the current element
+  index 	Optional. The array index of the current element
+  arr 	Optional. The array object the current element belongs to
+  */
+  var ages = [3, 10, 18, 20];
+
+  function checkAdult(age) {
+    return age >= 18;
+  }
+
+  function myFunction() {
+    document.getElementById("demo").innerHTML = ages.some(checkAdult);
+  }
+</script>
+
+</html>
