@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array reduceRight()</title>
+</head>
+
+<body>
+
+  <p>Click the button to get the sum of the numbers in the array.</p>
+  <button onclick="myFunction()">Try it</button>
+
+  <p>Sum of numbers in array: <span id="demo"></span></p>
+
+
+</body>
+<script>
+  var numbers = [65, 44, 12, 4];
+
+  function getSum(total, num) {
+    return total + num;
+  }
+
+  function myFunction(item) {
+    document.getElementById("demo").innerHTML = numbers.reduceRight(getSum);
+  }
+</script>
+
+</html>
