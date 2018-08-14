@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Object Properties</title>
+  <title>Add Object Properties</title>
 </head>
 
 <body>
-
+  <p id="demo"></p>
 </body>
 <script>
   var person = {
@@ -15,6 +15,9 @@
     age: 50,
     "likes birds": true // multiword property name must be quoted
   };
+  //The value can be of any type. Let’s add a boolean one:
+  person.isAdmin = true;
+  document.getElementById("demo").innerHTML = person['isAdmin'];
 </script>
 
 </html>

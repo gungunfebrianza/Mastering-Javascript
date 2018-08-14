@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Object Method</title>
-  </head>
-  <body>
 
-  </body>
-  <script>
-    // Define a function which will work as a method
-    function addPrice(amount){
-      this.price = amount;
+<head>
+  <meta charset="utf-8">
+  <title>Object Method</title>
+</head>
+
+<body>
+  <p>Creating and using an object method.</p>
+  <p>An object method is a function definition, stored as a property value.</p>
+  <p id="demo"></p>
+</body>
+<script>
+  var person = {
+    firstName: "John",
+    lastName: "Doe",
+    id: 5566,
+    fullName: function() {
+      return this.firstName + " " + this.lastName;
     }
+  };
 
-    function book(title,author){
-      this.title = title;
-      this.author = author;
-      this.addPrice = addPrice; // Assign that method as property.
-    }
+  document.getElementById("demo").innerHTML = person.fullName();
+</script>
 
-    let mybook = new book("Mastering Javascript","Gun Gun Febrianza");
-    mybook.addPrice(500);
-    console.log(mybook.price);
-  </script>
 </html>

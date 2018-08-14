@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Object Method</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  // Define a function which will work as a method
+  function addPrice(amount) {
+    this.price = amount;
+  }
+
+  //Function act as object
+  function book(title, author) {
+    this.title = title;
+    this.author = author;
+    this.addPrice = addPrice; // Assign that method as property.
+  }
+
+  let mybook = new book("Mastering Javascript", "Gun Gun Febrianza");
+  mybook.addPrice(500);
+  document.write(mybook.price);
+</script>
+
+</html>

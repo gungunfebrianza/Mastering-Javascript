@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Object Properties</title>
+  <title>Access Object Properties</title>
 </head>
 
 <body>
-
+  <p id="demo"></p>
 </body>
 <script>
   var person = {
@@ -15,6 +15,9 @@
     age: 50,
     "likes birds": true // multiword property name must be quoted
   };
+
+  //document.getElementById("demo").innerHTML = person.firstName;
+  document.getElementById("demo").innerHTML = person['firstName'];
 </script>
 
 </html>
