@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array Reduce()</title>
+</head>
+
+<body>
+  <p>Click the button to get the sum of the numbers in the array.</p>
+  <button onclick="myFunction()">Try it</button>
+
+  <p>Sum of numbers in array: <span id="demo"></span></p>
+</body>
+<script>
+  /*Definition and Usage
+      The reduce() method reduces the array to a single value.
+      The reduce() method executes a provided function for each value of the array
+      (from left-to-right). The return value of the function is stored in an
+      accumulator (result/total).
+      Note: reduce() does not execute the function for array elements without values.
+      */
+  /*Syntax :
+  array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+
+  Parameter :
+  total -	Required. The initialValue, or the previously returned value of the function
+  currentValue -	Required. The value of the current element
+  currentIndex - Optional. The array index of the current element
+  arr -	Optional. The array object the current element belongs to
+  */
+  var numbers = [65, 44, 12, 4];
+
+  function getSum(total, num) {
+    return total + num;
+  }
+
+  function myFunction(item) {
+    document.getElementById("demo").innerHTML = numbers.reduce(getSum);
+  }
+  /*Example:
+  Round all the numbers in an array, and display the sum:
+<button onclick="myFunction()">Try it</button>
+
+<p>Sum of numbers in array: <span id="demo"></span></p>
+
+<script>
+var numbers = [15.5, 2.3, 1.1, 4.7];
+
+function getSum(total, num) {
+    return total + Math.round(num);
+}
+function myFunction(item) {
+    document.getElementById("demo").innerHTML = numbers.reduce(getSum, 0);
+}
+*/
+</script>
+</script>
+
+</html>
