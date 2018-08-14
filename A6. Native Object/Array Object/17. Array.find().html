@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array Find()</title>
+</head>
+
+<body>
+
+  <p>Click the button to return the value of the first element in the array that has a value above a specific number.</p>
+  <p>Minimum age: <input type="number" id="ageToCheck" value="18"></p>
+  <button onclick="myFunction()">Try it</button>
+
+  <p>Value: <span id="demo"></span></p>
+
+  <p><strong>Note:</strong> The find() method is not supported in IE 11 (and earlier versions).</p>
+</body>
+<script>
+  /**/
+
+  /*Definition:
+  The find() method returns the value of the first element in an array that pass a test (provided as a function).
+  The find() method executes the function once for each element present in the array:
+    If it finds an array element where the function returns a true value, find() returns the value of that array element (and does not check the remaining values)
+    Otherwise it returns undefined
+  Note: find() does not execute the function for empty arrays.
+  Note: find() does not change the original array.
+*/
+
+  /*Syntax
+  array.find(function(currentValue, index, arr),thisValue)
+    currentValue - Required. The value of the current element
+    index -	Optional. The array index of the current element
+    arr -	Optional. The array object the current element belongs to
+  Get the value of the first element in the array that has a value above a specific number:
+  */
+  var ages = [4, 12, 16, 20];
+
+  function checkAdult(age) {
+    return age >= document.getElementById("ageToCheck").value;
+  }
+
+  function myFunction() {
+    document.getElementById("demo").innerHTML = ages.find(checkAdult);
+  }
+  /**/
+</script>
+
+</html>
