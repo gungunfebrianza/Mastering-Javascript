@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array sort()</title>
+</head>
+
+<body>
+  <p>Click the button to sort the array.</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <p id="demo"></p>
+
+</body>
+<script>
+  /*Definition and Usage
+  The sort() method sorts the items of an array.
+  The sort order can be either alphabetic or numeric, and either ascending (up) or descending (down).
+  By default, the sort() method sorts the values as strings in alphabetical and ascending order.
+  This works well for strings ("Apple" comes before "Banana"). However, if numbers
+  are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+  Because of this, the sort() method will produce an incorrect result when sorting numbers.
+  You can fix this by providing a "compare function" (See "Parameter Values" below).
+  Note: This method changes the original array.
+  */
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  document.getElementById("demo").innerHTML = fruits;
+
+  function myFunction() {
+    fruits.sort();
+    document.getElementById("demo").innerHTML = fruits;
+  }
+  /*Example
+  Sort numbers in an array in ascending order:
+  var points = [40, 100, 1, 5, 25, 10];
+  points.sort(function(a, b){return a-b});
+
+  Sort numbers in an array in descending order:
+  var points = [40, 100, 1, 5, 25, 10];
+  points.sort(function(a, b){return b-a});
+
+  Get the highest value in an array:
+  var points = [40, 100, 1, 5, 25, 10];
+  points.sort(function(a, b){return b-a});    // Sort the numbers in the array in descending order
+  // The first item in the array (points[0]) is now the highest value
+
+  Get the lowest value in an array:
+  var points = [40, 100, 1, 5, 25, 10];
+  points.sort(function(a, b){return a-b});    // Sort the numbers in the array in ascending order
+  // The first item in the array (points[0]) is now the lowest value
+
+  Sort an array alphabetically, and then reverse the order of the sorted items (descending):
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  fruits.sort();
+  fruits.reverse();
+  */
+</script>
+
+</html>
