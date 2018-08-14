@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array Splice()</title>
+</head>
+
+<body>
+  <p>Click the button to add elements to the array.</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <p id="demo"></p>
+</body>
+<script>
+  /*Definition and Usage
+        The splice() method adds/removes items to/from an array, and returns the removed item(s).
+        Note: This method changes the original array.*/
+
+  /*Syntax :
+  array.splice(index, howmany, item1, ....., itemX)
+
+  Parameter :
+  index -	Required. An integer that specifies at what position to add/remove items, Use negative values to specify the position from the end of the array
+  howmany -	Optional. The number of items to be removed. If set to 0, no items will be removed
+  item1, ..., itemX -	Optional. The new item(s) to be added to the array
+  */
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  document.getElementById("demo").innerHTML = fruits;
+
+  function myFunction() {
+    fruits.splice(2, 0, "Lemon", "Kiwi");
+    document.getElementById("demo").innerHTML = fruits;
+  }
+  /*Example :
+  At position 2, add the new items, and remove 1 item:
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  fruits.splice(2, 1, "Lemon", "Kiwi");
+
+  At position 2, remove 2 items:
+  var fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
+  fruits.splice(2, 2); */
+</script>
+
+</html>
