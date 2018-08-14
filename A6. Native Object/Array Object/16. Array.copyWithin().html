@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array Copy Within</title>
+</head>
+
+<body>
+  <p>Click the button to copy the first two array elements to the last two array elements.</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <p id="demo"></p>
+
+  <p><strong>Note:</strong> The copyWithin() method is not supported in IE 11 (and earlier versions).</p>
+</body>
+<script>
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  document.getElementById("demo").innerHTML = fruits;
+
+  function myFunction() {
+    document.getElementById("demo").innerHTML = fruits.copyWithin(2, 0);
+  }
+</script>
+
+</html>

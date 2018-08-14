@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array Every</title>
+</head>
+
+<body>
+  <p>Click the button to check if every element in the array has a value above a specific number.</p>
+  <p>Minimum age: <input type="number" id="ageToCheck" value="18"></p>
+  <button onclick="myFunction()">Try it</button>
+
+  <p>All ages above minimum? <span id="demo"></span></p>
+</body>
+<script>
+  var ages = [32, 33, 12, 40];
+
+  function checkAdult(age) {
+    return age >= document.getElementById("ageToCheck").value;
+  }
+
+  function myFunction() {
+    document.getElementById("demo").innerHTML = ages.every(checkAdult);
+  }
+</script>
+
+</html>

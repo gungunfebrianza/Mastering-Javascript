@@ -3,56 +3,29 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Looping Array - ForEach</title>
+  <title>Array Concat()</title>
 </head>
 
 <body>
-  <h2>Looping Arrays- ForEach</h2>
-
+  <p>Click the button to join two arrays.</p>
+  <button onclick="myFunction()">Try it</button>
   <p id="demo"></p>
+
 </body>
 <script>
   /*Array Definition
-      The Array object lets you store multiple values in a single variable.
-      It stores a fixed-size sequential collection of elements of the same type.
-      An array is used to store a collection of data, but it is often more useful
-      to think of an array as a collection of variables of the same type.
-      */
-  var array1 = ['a', 'b', 'c'];
-
-  array1.forEach(function(element) {
-    document.getElementById("demo").innerHTML += element + " ";
-  });
-
-  /*Syntax
-  arr.forEach(function callback(currentValue[, index[, array]]) {
-    //your iterator
-}[, thisArg]);
-
-callback
-    Function to execute for each element, taking three arguments:
+  The Array object lets you store multiple values in a single variable.
+  It stores a fixed-size sequential collection of elements of the same type.
+  An array is used to store a collection of data, but it is often more useful
+  to think of an array as a collection of variables of the same type.
   */
 
-  /*Example
-  const items = ['item1', 'item2', 'item3'];
-  const copy = [];
-
-  items.forEach(function(item) {
-    copy.push(item)
-  });
-
-  function logArrayElements(element, index, array) {
-    console.log('a[' + index + '] = ' + element);
+  function myFunction() {
+    var hege = ["Cecilie", "Lone"];
+    var stale = ["Emil", "Tobias", "Linus"];
+    var children = hege.concat(stale);
+    document.getElementById("demo").innerHTML = children;
   }
-
-   Notice that index 2 is skipped since there is no item at
-   that position in the array.
-  [2, 5, , 9].forEach(logArrayElements);
-   logs:
-   a[0] = 2
-   a[1] = 5
-   a[3] = 9
-  */
 
   /*Notes Array Properties
   Property - Description

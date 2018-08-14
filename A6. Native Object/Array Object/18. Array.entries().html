@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array Entries</title>
+</head>
+
+<body>
+  <h1>Array entries()</h1>
+
+  <p>Create an Iteration Object from the fruit array.</p>
+
+  <p>Each entry will have a key/value pair based on the array values:</p>
+
+  <p id="demo"></p>
+
+  <p><strong>Note:</strong> The entries method is not supported in IE 11 (and earlier versions).</p>
+</body>
+<script>
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  var x = fruits.entries();
+
+  document.getElementById("demo").innerHTML = x.next().value;
+</script>
+
+</html>
