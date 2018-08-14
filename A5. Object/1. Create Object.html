@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
-    <title>Create Object</title>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>Create Object</title>
+</head>
 
-  <body>
-    <p id="demo"></p>
-  </body>
-  <script>
-    //An empty object can be created using one of two syntaxes:
-    let user = new Object(); // "object constructor" syntax
-    let users = {}; // "object literal" syntax
+<body>
+  <p id="demo"></p>
+</body>
+<script>
+  //An empty object can be created using one of two syntaxes:
+  let user = new Object(); // "object constructor" syntax
+  let users = {}; // "object literal" syntax
 
-    //We can immediately put some properties into {...} as “key: value” pairs:
-    var person = {
-      firstName: "John",
-      age: 50,
-    };
+  /*Objects are variables too. But objects can contain many values.
+  We can immediately put some properties into {...} as “key: value” pairs:
+  */
+  var person = {
+    firstName: "John",
+    age: 50,
+  };
 
-    //alert("firstName : " + person.firstName)
-    //alert("Age : " + person.age)
-  </script>
+  //alert("firstName : " + person.firstName)
+  //alert("Age : " + person.age)
+</script>
 
 </html>

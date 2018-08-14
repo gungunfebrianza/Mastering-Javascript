@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Object Mutable</title>
+</head>
+
+<body>
+  <p>JavaScript objects are mutable.</p>
+  <p>Any changes to a copy of an object will also change the original.</p>
+
+  <p id="demo"></p>
+
+</body>
+<script>
+  //Any changes to x will also change person, because x and person are the same object.
+  //Note: JavaScript variables are not mutable. Only JavaScript objects.
+  var person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+  }
+
+  var x = person;
+  x.age = 10;
+
+  document.getElementById("demo").innerHTML =
+    person.firstName + " is " + person.age + " years old.";
+</script>
+
+</html>

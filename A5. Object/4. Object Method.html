@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Object Method</title>
+</head>
+
+<body>
+  <p>Creating and using an object method.</p>
+  <p>An object method is a function definition, stored as a property value.</p>
+  <p id="demo"></p>
+</body>
+<script>
+  var person = {
+    firstName: "John",
+    lastName: "Doe",
+    id: 5566,
+    fullName: function() {
+      return this.firstName + " " + this.lastName;
+    }
+  };
+
+  document.getElementById("demo").innerHTML = person.fullName();
+</script>
+
+</html>
