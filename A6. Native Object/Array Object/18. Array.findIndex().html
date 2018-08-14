@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array findIndex()</title>
+</head>
+
+<body>
+  <p>Click the button to return the index of the first element in the array that has a value above a specific number.</p>
+  <p>Minimum age: <input type="number" id="ageToCheck" value="18"></p>
+  <button onclick="myFunction()">Try it</button>
+
+  <p>Index: <span id="demo"></span></p>
+
+  <p><strong>Note:</strong> The findIndex() method is not supported in IE 11 (and earlier versions).</p>
+</body>
+<script>
+  /*Definition:
+    The findIndex() method returns the index of the first element in an array that pass a test (provided as a function).
+    The findIndex() method executes the function once for each element present in the array:
+      If it finds an array element where the function returns a true value,
+      findIndex() returns the index of that array element (and does not check the remaining values)
+      Otherwise it returns -1
+
+    Note: findIndex() does not execute the function for array elements without values.
+    Note: findIndex() does not change the original array.
+     */
+  /*Syntax :
+  array.findIndex(function(currentValue, index, arr), thisValue)
+
+  Parameter :
+    currentValue -	Required. The value of the current element
+    index -	Optional. The array index of the current element
+    arr -	Optional. The array object the current element belongs to
+  Get the index of the first element in the array that has a value above a specific number:
+   */
+  var ages = [4, 12, 16, 20];
+
+  function checkAdult(age) {
+    return age >= document.getElementById("ageToCheck").value;
+  }
+
+  function myFunction() {
+    document.getElementById("demo").innerHTML = ages.findIndex(checkAdult);
+  }
+</script>
+
+</html>
