@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array include()</title>
+</head>
+
+<body>
+  <p>Check if the fruit array contains "Mango":</p>
+
+  <p id="demo"></p>
+
+  <p><strong>Note:</strong> The includes method is not supported in IE 11 (and earlier versions).</p>
+</body>
+<script>
+  /*
+      The includes() method determines whether an array contains a specified element.
+      This method returns true if the array contains the  element, and false if not.
+      Note: The includes() method is case sensitive.
+      */
+  /*Syntax :
+  array.includes(element, start)
+
+  */
+
+
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  var n = fruits.includes("Mango");
+
+  document.getElementById("demo").innerHTML = n;
+  /*Example:
+  Check if an array includes "Banana", starting the search at position 3:
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  var n = fruits.includes("Banana", 3);
+*/
+</script>
+
+</html>
