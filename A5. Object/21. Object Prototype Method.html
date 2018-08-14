@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title> Object Prototype</title>
+</head>
+
+<body>
+  <h2>JavaScript Objects</h2>
+
+  <p id="demo"></p>
+</body>
+<script>
+  function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+  }
+  Person.prototype.name = function() {
+    return this.firstName + " " + this.lastName;
+  };
+</script>
+
+</html>
