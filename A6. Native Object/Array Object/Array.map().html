@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array Map</title>
+</head>
+
+<body>
+  <p>Click the button to get the square root of each element in the array.</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <p id="demo"></p>
+</body>
+<script>
+  /*Definition and Usage
+  The map() method creates a new array with the results of calling a function
+  for every array element. The map() method calls the provided function once
+  for each element in an array, in order.
+
+  Note: map() does not execute the function for array elements without values.
+  Note: map() does not change the original array.
+  */
+
+  /*Syntax :
+  array.map(function(currentValue, index, arr), thisValue)
+
+  Parameter :
+    currentValue -	Required. The value of the current element
+    index -	Optional. The array index of the current element
+    arr -	Optional. The array object the current element belongs to
+
+    //Return an array with the square root of all the values in the original array:
+    var numbers = [4, 9, 16, 25];
+  */
+  function myFunction() {
+    x = document.getElementById("demo")
+    x.innerHTML = numbers.map(Math.sqrt);
+  }
+
+  /*Example:
+  Multiply all the values in array with a specific number:
+  var numbers = [65, 44, 12, 4];
+
+  function multiplyArrayElement(num) {
+      return num * document.getElementById("multiplyWith").value;
+  }
+
+  function myFunction() {
+      document.getElementById("demo").innerHTML = numbers.map(multiplyArrayElement);
+  }
+  Get the full name for each person in the array:
+  var persons = [
+      {firstname : "Malcom", lastname: "Reynolds"},
+      {firstname : "Kaylee", lastname: "Frye"},
+      {firstname : "Jayne", lastname: "Cobb"}
+  ];
+
+
+  function getFullName(item, index) {
+      var fullname = [item.firstname,item.lastname].join(" ");
+      return fullname;
+  }
+
+  function myFunction() {
+      document.getElementById("demo").innerHTML = persons.map(getFullName);
+  } 
+  */
+</script>
+
+</html>
