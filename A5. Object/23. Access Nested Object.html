@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Access Nested Object</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  var objects = {
+    baz: {
+      foo: {
+        bar: 5
+      }
+    }
+  };
+
+  document.getElementById("demo").innerHTML = objects.baz.foo.bar;
+</script>
+
+</html>
