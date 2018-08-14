@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array isArray</title>
+</head>
+
+<body>
+  <p>Click the button to check if "fruits" is an array.</p>
+  <button onclick="myFunction()">Try it</button>
+  <p id="demo"></p>
+</body>
+<script>
+  function myFunction() {
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    var x = document.getElementById("demo");
+    x.innerHTML = Array.isArray(fruits);
+  }
+</script>
+
+</html>
