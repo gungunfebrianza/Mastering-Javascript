@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Reflect Has</title>
+</head>
+
+<body>
+
+</body>
+<script type="text/javascript">
+  const object1 = {
+    property1: 42
+  };
+
+  console.log(Reflect.has(object1, 'property1'));
+  // expected output: true
+
+  console.log(Reflect.has(object1, 'property2'));
+  // expected output: false
+
+  console.log(Reflect.has(object1, 'toString'));
+  // expected output: true
+
+  /*Return
+  > true
+  > false
+  > true
+  */
+</script>
+
+</html>
