@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Reflect Get</title>
+</head>
+
+<body>
+
+</body>
+<script type="text/javascript">
+  const object1 = {
+    x: 1,
+    y: 2
+  };
+
+  console.log(Reflect.get(object1, 'x'));
+  // expected output: 1
+
+  var array1 = ['zero', 'one'];
+
+  console.log(Reflect.get(array1, 1));
+  // expected output: "one"
+
+
+  /*Return
+  > 1
+  > "one"
+  */
+</script>
+
+</html>
