@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Automated Testing</title>
+    <!-- add mocha css, to show results -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <!-- add mocha framework code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script>
+      mocha.setup('bdd'); // minimal setup
+    </script>
+    <!-- add chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+      // chai has a lot of stuff, let's make assert global
+      let assert = chai.assert;
+    </script>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      /*
+          Mocha – the core framework: it provides common testing functions including describe and it and the main function that runs tests.
+          Chai – the library with many assertions. It allows to use a lot of different assertions, for now we need only assert.equal.
+          Sinon – a library to spy over functions, emulate built-in functions and more, we’ll need it much later.
+          */
+
+      function pow(x, n) {
+        /* function code is to be written, empty now */
+        //return 8; // :) we cheat!
+        let result = 1;
+
+        for (let i = 0; i < n; i++) {
+          result *= x;
+        }
+        return result;
+      }
+      describe("test", function() {
+
+        it("2 raised to power 3 is 8", function() {
+          assert.equal(pow(2, 3), 8);
+        });
+
+        it("3 raised to power 3 is 27", function() {
+          assert.equal(pow(3, 3), 27);
+        });
+
+      });
+    </script>
+
+    <!-- the element with id="mocha" will contain test results -->
+    <div id="mocha"></div>
+    <!-- run tests! -->
+    <script>
+      mocha.run();
+    </script>
+  </body>
+
+</html>
