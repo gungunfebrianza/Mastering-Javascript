@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Reflect Set</title>
+</head>
+
+<body>
+
+</body>
+<script type="text/javascript">
+  const object1 = {};
+  Reflect.set(object1, 'property1', 42);
+
+  console.log(object1.property1);
+  // expected output: 42
+
+  const array1 = ['duck', 'duck', 'duck'];
+  Reflect.set(array1, 2, 'goose');
+
+  console.log(array1[2]);
+  // expected output: "goose"
+
+  /*Return
+  > 42
+  > "goose"
+  */
+</script>
+
+</html>
