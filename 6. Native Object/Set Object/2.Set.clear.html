@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Set Constructor</title>
+</head>
+
+<body>
+
+</body>
+<script type="text/javascript">
+  /*Description
+            The add() method appends a new element with a specified value to the end of
+             a Set object.
+             */
+  const set1 = new Set();
+  set1.add(1);
+  set1.add('foo');
+
+  console.log(set1.size);
+  // expected output: 2
+
+  set1.clear();
+
+  console.log(set1.size);
+  // expected output: 0
+
+  /*output
+  > 2
+  > 0
+  */
+</script>
+
+</html>
