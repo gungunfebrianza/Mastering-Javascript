@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Reflect defineProperty</title>
+</head>
+
+<body>
+
+</body>
+<script type="text/javascript">
+  const object1 = {};
+
+  if (Reflect.defineProperty(object1, 'property1', {
+      value: 42
+    })) {
+    console.log('property1 created!');
+    // expected output: "property1 created!"
+  } else {
+    console.log('problem creating property1');
+  }
+
+  console.log(object1.property1);
+  // expected output: 42
+
+  /*Return
+  > "property1 created!"
+  > 42
+  */
+</script>
+
+</html>
