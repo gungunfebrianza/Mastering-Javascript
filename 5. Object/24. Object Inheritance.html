@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Object Inheritance</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  function Person(first, last, age, gender, interests) {
+    this.name = {
+      first,
+      last
+    };
+    this.age = age;
+    this.gender = gender;
+    this.interests = interests;
+  };
+
+  function Teacher(first, last, age, gender, interests, subject) {
+    Person.call(this, first, last, age, gender, interests);
+
+    this.subject = subject;
+  };
+
+  var tea = new Teacher('Gun', 'Febrianza', 20, 'Male', ['music', 'coding', 'cooking']);
+  console.log(tea);
+</script>
+
+</html>
