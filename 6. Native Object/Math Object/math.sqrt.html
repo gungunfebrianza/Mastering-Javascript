@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Math Object</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  function calcHypotenuse(a, b) {
+    return (Math.sqrt((a * a) + (b * b)));
+  }
+
+  console.log(calcHypotenuse(3, 4));
+  // expected output: 5
+
+  console.log(calcHypotenuse(5, 12));
+  // expected output: 13
+
+  console.log(calcHypotenuse(0, 0));
+  // expected output: 0
+
+  Math.sqrt(9); // 3
+  Math.sqrt(2); // 1.414213562373095
+
+  Math.sqrt(1); // 1
+  Math.sqrt(0); // 0
+  Math.sqrt(-1); // NaN
+  Math.sqrt(-0); // -0
+</script>
+
+</html>
