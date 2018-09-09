@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Map Object</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  var original = new Map([
+    [1, 'one']
+  ]);
+
+  var clone = new Map(original);
+
+  console.log(clone.get(1)); // one
+  console.log(original === clone); // false. Useful for shallow comparison
+</script>
+
+</html>
