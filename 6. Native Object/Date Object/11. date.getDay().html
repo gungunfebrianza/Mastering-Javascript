@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Date Object</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /*
+  Description
+  The getDay() method returns the day of the week for the specified date according
+  to local time, where 0 represents Sunday. For the day of the month see getDate().
+
+  Returns
+  An integer number corresponding to the day of the week for the given date, 
+  according to local time: 0 for Sunday, 1 for Monday, 2 for Tuesday, and so on.
+  */
+  var birthday = new Date('August 19, 1975 23:15:30');
+  var day1 = birthday.getDay();
+  // Sunday - Saturday : 0 - 6
+
+  console.log(day1);
+  // expected output: 2
+</script>
+
+</html>
