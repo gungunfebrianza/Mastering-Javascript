@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Map Object</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  var first = new Map([
+    [1, 'one'],
+    [2, 'two'],
+    [3, 'three'],
+  ]);
+
+  var second = new Map([
+    [1, 'uno'],
+    [2, 'dos']
+  ]);
+
+  // Merge two maps. The last repeated key wins.
+  // Spread operator essentially converts a Map to an Array
+  var merged = new Map([...first, ...second]);
+
+  console.log(merged.get(1)); // uno
+  console.log(merged.get(2)); // dos
+  console.log(merged.get(3)); // three
+</script>
+
+</html>
