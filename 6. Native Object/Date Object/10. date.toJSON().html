@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Date Object</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /*
+  Description
+  The toJSON() method returns a string representation of the Date object
+
+  Returns
+  A string representation of the given date.
+  */
+  var event = new Date('August 19, 1975 23:15:30 UTC');
+
+  var jsonDate = event.toJSON();
+
+  console.log(jsonDate);
+  // expected output: 1975-08-19T23:15:30.000Z
+
+  console.log(new Date(jsonDate).toUTCString());
+  // expected output: Tue, 19 Aug 1975 23:15:30 GMT
+</script>
+
+</html>
