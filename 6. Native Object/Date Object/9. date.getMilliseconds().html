@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Method getDate()</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /*
+  Description
+  The getMilliseconds() method returns the milliseconds in the specified date
+  according to local time.
+
+  Returns
+  A number, between 0 and 999, representing the milliseconds for the given date
+  according to local time.
+  */
+  var today = new Date();
+  var milliseconds = today.getMilliseconds();
+
+  var moonLanding = new Date('July 20, 69 00:20:18');
+  moonLanding.setMilliseconds(123);
+
+  console.log(moonLanding.getMilliseconds());
+  // expected output: 123
+</script>
+
+</html>
