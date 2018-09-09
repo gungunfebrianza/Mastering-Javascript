@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Method getDate()</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /*
+  Description
+  The getSeconds() method returns the seconds in the specified date according
+  to local time.
+
+  Returns
+  An integer number, between 0 and 59, representing the seconds in the given
+  date according to local time.
+  */
+  var Xmas95 = new Date('December 25, 1995 23:15:30');
+  var seconds = Xmas95.getSeconds();
+
+  console.log(seconds); // 30
+  var moonLanding = new Date('July 20, 69 00:20:18');
+
+  console.log(moonLanding.getSeconds());
+  // expected output: 18
+</script>
+
+</html>

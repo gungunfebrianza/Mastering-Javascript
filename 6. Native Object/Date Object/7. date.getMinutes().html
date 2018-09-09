@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Method getDate()</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /*
+  Description
+  The getMinutes() method returns the minutes in the specified date according to local time.
+
+  Returns
+  An integer number, between 0 and 59, representing the minutes in the given date according to local time.
+  */
+  var birthday = new Date('March 13, 08 04:20');
+
+  console.log(birthday.getMinutes());
+  // expected output: 20
+
+  var Xmas95 = new Date('December 25, 1995 23:15:30');
+  var minutes = Xmas95.getMinutes();
+
+  console.log(minutes); // 15
+</script>
+
+</html>
