@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Method getDate()</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /*
+  Description
+  The getMonth() method returns the month in the specified date according to
+  local time, as a zero-based value (where zero indicates the first month of the year).
+
+  Syntax
+  Its syntax is as follows −
+  dateObj.getFullYear()
+  */
+
+  var moonLanding = new Date('July 20, 69 00:20:18');
+
+  console.log(moonLanding.getMonth()); // (January gives 0)
+  // expected output: 6
+
+  var Xmas95 = new Date('December 25, 1995 23:15:30');
+  var month = Xmas95.getMonth();
+
+  console.log(month); // 11
+</script>
+
+</html>
