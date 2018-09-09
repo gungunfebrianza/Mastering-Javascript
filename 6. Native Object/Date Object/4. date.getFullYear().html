@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Method getDate()</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /*
+  Description
+  The getFullYear() method returns the year of the specified date according to local time.
+  Use this method instead of the getYear() method.
+
+  Syntax
+  Its syntax is as follows −
+  dateObj.getFullYear()
+  */
+
+  var today = new Date();
+  var year = today.getFullYear();
+
+  var moonLanding = new Date('July 20, 69 00:20:18');
+
+  console.log(moonLanding.getFullYear());
+  // expected output: 1969
+</script>
+
+</html>
