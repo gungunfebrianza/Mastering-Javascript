@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Date Object</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /*
+  Description
+  The getTimezoneOffset() method returns the time zone difference, in minutes,
+  from current locale (host system settings) to UTC.
+
+  Returns
+  A number representing the time-zone offset, in minutes, from the date based
+  on current host system settings to UTC.
+  */
+  var date1 = new Date('August 19, 1975 23:15:30 GMT+07:00');
+  var date2 = new Date('August 19, 1975 23:15:30 GMT-02:00');
+
+  console.log(date1.getTimezoneOffset());
+  // expected output: your local timezone offset in minutes
+  // (eg -120). NOT the timezone offset of the date object.
+
+  console.log(date1.getTimezoneOffset() === date2.getTimezoneOffset());
+  // expected output: true
+</script>
+
+</html>
