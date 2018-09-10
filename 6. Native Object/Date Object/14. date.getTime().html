@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Date Object</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /*
+  Description
+  The getTime() method returns the numeric value corresponding to the time for
+  the specified date according to universal time.
+
+  getTime() always uses UTC for time representation. For example, a client
+  browser in one timezone, getTime() will be the same as a client browser in
+  any other timezone.
+
+  Returns
+  A number representing the milliseconds elapsed between 1 January 1970 00:00:00
+  UTC and the given date.
+  */
+  // this example takes 2 seconds to run
+  var moonLanding = new Date('July 26, 2018 00:20:18 GMT+00:00');
+
+  // milliseconds since July 26, 2018, 00:00:00.000 GMT
+  console.log(moonLanding.getTime());
+  // expected output: 1532564418000
+</script>
+
+</html>
