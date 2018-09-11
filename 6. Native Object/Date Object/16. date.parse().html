@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Date Object</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /*
+  Description
+  The Date.parse() method parses a string representation of a date, and returns
+  the number of milliseconds since January 1, 1970, 00:00:00 UTC or NaN if the
+  string is unrecognized or, in some cases, contains illegal date values
+  (e.g. 2015-02-31).
+
+  Returns
+  A number representing the milliseconds elapsed since January 1, 1970, 00:00:00
+  UTC and the date obtained by parsing the given string representation of a date.
+  */
+  var unixTimeZero = Date.parse('01 Jan 1970 00:00:00 GMT');
+  var javaScriptRelease = Date.parse('04 Dec 1995 00:12:00 GMT');
+
+  console.log(unixTimeZero);
+  // expected output: 0
+
+  console.log(javaScriptRelease);
+  // expected output: 818035920000
+</script>
+
+</html>
