@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Check Yesterday Date</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  function calculate_age(dob) {
+    var diff_ms = Date.now() - dob.getTime();
+    var age_dt = new Date(diff_ms);
+
+    return Math.abs(age_dt.getUTCFullYear() - 1970);
+  }
+
+  console.log(calculate_age(new Date(1982, 11, 4)));
+
+  console.log(calculate_age(new Date(1962, 1, 1)));
+</script>
+
+</html>
