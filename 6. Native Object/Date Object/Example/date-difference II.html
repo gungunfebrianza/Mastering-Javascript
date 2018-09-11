@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Date Difference</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  function date_diff_indays(d1, d2) {
+    var diff = Date.parse(d2) - Date.parse(d1);
+    return Math.floor(diff / 86400000);
+  }
+  console.log(date_diff_indays('04/02/2014', '11/04/2014'));
+  console.log(date_diff_indays('12/02/2014', '11/04/2014'));
+</script>
+
+</html>
