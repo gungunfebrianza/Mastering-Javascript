@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Get Numeric Week</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  function ISO_numeric_date(dt) {
+    return (dt.getDay() === 0 ? 7 : dt.getDay());
+  }
+
+  dt = new Date();
+  console.log(ISO_numeric_date(dt));
+
+  dt = new Date(2015, 10, 1);
+  console.log(ISO_numeric_date(dt));
+</script>
+
+</html>
