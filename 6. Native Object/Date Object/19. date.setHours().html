@@ -11,8 +11,8 @@
 </body>
 <script>
   var y2k = new Date(2000, 0, 1);
-  y2k.setMonth(14);
-  console.log('14 months after the new millenium is: ' + y2k.toDateString()); //displays Thu Mar 31 2001
+  y2k.setHours(-22);
+  console.log('22 hours before the new millenium is: ' + y2k); //displays Fri Dec 31 1999 02:00:00 GMT-0500 (Eastern Standard Time)
 </script>
 
 </html>
