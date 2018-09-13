@@ -2,17 +2,42 @@
 From Hero to Zero
 
 <ul>
-  <li>1. Basic</li>
+  <li>
+    1. Basic
+    <ul>
+      <li>1. Start</li>
+      <li>2. Types & Variable</li>
+      <li>3. Assignment Operation</li>
+      <li>4. Arithmetic Operation</li>
+      <li>5. Compare Operation</li>
+      <li>6. Logical Operation</li>
+      <li>7. Conditional Operation</li>
+      <li>8. Looping Operation</li>
+    </ul>
+  </li>
   <li>2. Function</li>
   <li>3. Console Object</li>
   <li>4. Automated Testing</li>
   <li>5. Object</li>
-  <li>6. Native Object</li>
+  <li>
+    6. Native Object
+      <ul>
+      <li>1. Array Object</li>
+      <li>2. Date Object</li>
+      <li>3. Map Object</li>
+      <li>4. Math Object</li>
+      <li>5. Number Object</li>
+      <li>6. Reflect Object</li>
+      <li>7. Regex Object</li>
+      <li>8. Set Object</li>
+      <li>9. String Object</li>
+    </ul>
+  </li>
   <li>7. DOM</li>
   <li>8. Windows</li>
 <ul>
 
----------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
 MIT License
 
 Copyright (c) 2018 Gun Gun Febrianza
