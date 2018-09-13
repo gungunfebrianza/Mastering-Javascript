@@ -10,6 +10,14 @@
 
 </body>
 <script>
+  /*
+As long as you can calculate the number of milliseconds in an interval, you can
+come up with a number by dividing the total number of milliseconds by the number
+of milliseconds in the desired interval. What's more, we can apply the modulus
+(%) operator to strip out that value to determine the next larger interval.
+The key is to always go from the smallest interval - milliseconds -
+to the largest - days:
+*/
   Date.daysBetween = function(date1, date2) {
     //Get 1 day in milliseconds
     var one_day = 1000 * 60 * 60 * 24;
