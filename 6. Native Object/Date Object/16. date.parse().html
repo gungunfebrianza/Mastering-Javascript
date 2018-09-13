@@ -29,6 +29,12 @@
 
   console.log(javaScriptRelease);
   // expected output: 818035920000
+
+  //Some other examples of parsing non–standard date strings:
+  Date.parse('Aug 9, 1995');
+
+  //Returns 807926400000 no matter the local time zone as GMT (UTC) is provided.
+  Date.parse('Wed, 09 Aug 1995 00:00:00 GMT');
 </script>
 
 </html>
