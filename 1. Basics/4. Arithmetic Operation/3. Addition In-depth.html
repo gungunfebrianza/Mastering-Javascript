@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Addition In-depth</title>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Addition In-depth</title>
-</head>
+  <body></body>
+  <script>
+    //The addition operator produces the sum of numeric operands or string concatenation.
+    // Number + Number -> addition
+    console.log(1 + 2); // 3
 
-<body>
+    // Boolean + Number -> addition
+    console.log(true + 1); // 2
 
-</body>
-<script>
-  //The addition operator produces the sum of numeric operands or string concatenation.
-  // Number + Number -> addition
-  console.log(1 + 2); // 3
+    // Boolean + Boolean -> addition
+    console.log(false + false); // 0
 
-  // Boolean + Number -> addition
-  console.log(true + 1); // 2
+    // Number + String -> concatenation
+    console.log(5 + 'foo'); // "5foo"
 
-  // Boolean + Boolean -> addition
-  console.log(false + false); // 0
+    // String + Boolean -> concatenation
+    console.log('foo' + false); // "foofalse"
 
-  // Number + String -> concatenation
-  console.log(5 + 'foo'); // "5foo"
-
-  // String + Boolean -> concatenation
-  console.log('foo' + false); // "foofalse"
-
-  // String + String -> concatenation
-  console.log('foo' + 'bar'); // "foobar"
-</script>
-
+    // String + String -> concatenation
+    console.log('foo' + 'bar'); // "foobar"
+  </script>
 </html>
