@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<title>Roxi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<body>
+    <div class="w3-container w3-indigo">
+        <h1>Roxi Token Dynamics</h1>
+    </div>
+    <div class="w3-row">
+        <div class="w3-col m4 l3">
+            <div class="w3-container">
+                <div class="w3-panel w3-indigo">
+                    <p>Configurations</p>
+                </div>
+                <form class="w3-container w3-padding-16 w3-border">
+                    <label>Roxi Fundraise Target ($)</label>
+                    <input class="w3-input w3-margin-bottom" type="text" id="fundTarget" value="25000000"
+                        onchange="calculateSupply()">
+
+                    <label>Roxi Token Pricing ($)</label>
+                    <input class="w3-input w3-margin-bottom" type="number" id="roxiTokenPrice" value="0.25" min="0.00"
+                        max="100.00" step="0.01" onchange="calculateSupply()">
+
+                    <label>Roxi Token Supply ($ROXI)</label>
+                    <input class="w3-input" type="number" id="roxiTokenSupply" value="100000000">
+                </form>
+
+                <div class="w3-panel w3-indigo">
+                    <p>PT Talisan Emas</p>
+                </div>
+
+                <form class="w3-container w3-padding-16 w3-border">
+                    <label>Carbon Price ($)</label>
+                    <input class="w3-input w3-margin-bottom" type="number" id="carbonPrice" value="8" min="0.00"
+                        max="100.00" step="0.50" onchange="calculatePotentialRenenue()">
+
+                    <label>Land Area (Ha)</label>
+                    <input class="w3-input w3-margin-bottom" type="text" id="landArea" value="50000"
+                        onchange="calculateCarbonCredit()">
+
+                    <label>Per-Ha Carbon Credit (Ton)</label>
+                    <input class="w3-input w3-margin-bottom" type="number" id="hatonCarbonCredit" value="20" onchange="calculateCarbonCredit()">
+
+                    <label>Total Carbon Credit (Ton)</label>
+                    <input class="w3-input w3-margin-bottom" type="text" id="totalCarbonCredit" value="1000000" onchange="calculatePotentialRenenue()">
+
+                    <label>Potential Revenue ($)</label>
+                    <input class="w3-input" type="text" id="potentialRevenue" value="8000000">
+                </form>
+
+                <div class="w3-panel w3-indigo">
+                    <p>Indicators</p>
+                </div>
+
+                <form class="w3-container w3-padding-16 w3-border">
+                    <label>Coupon Ratio-per (Ton)</label>
+                    <input class="w3-input w3-margin-bottom" type="number" id="couponRatio" value="1000"
+                        max="10000" step="100" onchange="calculateIssuedCoupons()">
+
+                    <label>Total Issue Coupon (Coupons)</label>
+                    <input class="w3-input w3-margin-bottom" type="number" id="totalIssueCoupons" value="1000" min="0.00"
+                        max="10000" step="100">
+
+                    <label>Per-Coupon Price ($)</label>
+                    <input class="w3-input" type="number" id="perCouponPrice" value="8000">
+
+                    <label>Per-Roxi Token Price ($)</label>
+                    <input class="w3-input" type="number" id="perRoxiTokenPrice" value="0.25">
+
+                    <label>Coupon to Roxi Token ($ROXI)</label>
+                    <input class="w3-input" type="number" id="couponToRoxiToken" value="32000">
+
+                    <label>All Coupon to Roxi Token ($ROXI)</label>
+                    <input class="w3-input" type="number" id="allCouponToRoxiToken" value="32000000">
+                </form>
+
+
+            </div>
+        </div>
+        <div class="w3-col m8 l9">
+            <div class="w3-panel w3-indigo">
+                <p>Data Visualization</p>
+            </div>
+            <div class="w3-bar w3-margin-top w3-indigo w3-border">
+                <button class="w3-bar-item w3-button" onclick="openCity('London')">Chart 1</button>
+                <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Chart 2</button>
+                <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Chart 3</button>
+            </div>
+            <div class="w3-container w3-white w3-border w3-padding-16 w3-section">
+                <div id="London" class="city">
+                    <canvas id="myChart1" style="width:100%;max-width:700px"></canvas>
+                </div>
+
+                <div id="Paris" class="city" style="display:none">
+                    <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
+                </div>
+
+                <div id="Tokyo" class="city" style="display:none">
+                    <h2>Tokyo</h2>
+                    <p>Tokyo is the capital of Japan.</p>
+                </div>
+            </div>
+            <table class="w3-table w3-bordered w3-border w3-hoverable w3-centered">
+                <tr class="w3-indigo">
+                    <th>Investor</th>
+                    <th>Total Roxi Token</th>
+                    <th>Total Fiat Price</th>
+                    <th>Total Coupons</th>
+                </tr>
+                <tr>
+                    <td>Investor A</td>
+                    <td><input class="w3-input" type="text"></td>
+                    <td><input class="w3-input" type="text"></td>
+                    <td><input class="w3-input" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Investor B</td>
+                    <td><input class="w3-input" type="text"></td>
+                    <td><input class="w3-input" type="text"></td>
+                    <td><input class="w3-input" type="text"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+    <div class="w3-row">
+        <div class="w3-section"></div>
+    </div>
+    </div>
+
+    <script>
+        function calculateSupply() {
+            let fundTarget = document.getElementById("fundTarget").value;
+            let tokenPrice = document.getElementById("roxiTokenPrice").value;
+            let supply = fundTarget / tokenPrice;
+            document.getElementById("roxiTokenSupply").value = Math.round(supply);
+        }
+
+        function calculateCarbonCredit() {
+            let landArea = document.getElementById("landArea").value;
+            let hatonCarbonCredit = document.getElementById("hatonCarbonCredit").value;
+            let totalCarbonCredit = landArea * hatonCarbonCredit;
+            document.getElementById("totalCarbonCredit").value = totalCarbonCredit;
+            calculatePotentialRenenue();
+            calculateIssuedCoupons();
+        }
+
+        function calculatePotentialRenenue() {
+            let carbonPrice = document.getElementById("carbonPrice").value;
+            let totalCarbonCredit = document.getElementById("totalCarbonCredit").value;
+            let potentialRevenue = carbonPrice*totalCarbonCredit;
+            document.getElementById("potentialRevenue").value = potentialRevenue;
+            perCouponPrice();
+            allCouponToRoxiToken();
+        }
+
+        function calculateIssuedCoupons() {
+            let couponRatio = document.getElementById("couponRatio").value;
+            let totalCarbonCredit = document.getElementById("totalCarbonCredit").value;
+            let totalIssueCoupons = totalCarbonCredit/couponRatio;
+            document.getElementById("totalIssueCoupons").value = Math.round(totalIssueCoupons);
+            perCouponPrice();
+            couponToRoxiToken();
+        }
+
+        function perCouponPrice() {
+            let couponRatio = document.getElementById("couponRatio").value;
+            let carbonPrice = document.getElementById("carbonPrice").value;
+            let perCouponPrice = couponRatio*carbonPrice;
+            document.getElementById("perCouponPrice").value = perCouponPrice;
+        }
+
+        function couponToRoxiToken() {
+            let perCouponPrice = document.getElementById("perCouponPrice").value;
+            let tokenPrice = document.getElementById("roxiTokenPrice").value;
+            let couponToRoxiToken = perCouponPrice/tokenPrice;
+            document.getElementById("couponToRoxiToken").value = Math.round(couponToRoxiToken);
+        }
+
+        function allCouponToRoxiToken() {
+            let totalIssueCoupons = document.getElementById("totalIssueCoupons").value;
+            let couponToRoxiToken = document.getElementById("couponToRoxiToken").value;
+            let allCouponToRoxiToken = totalIssueCoupons*couponToRoxiToken;
+            document.getElementById("allCouponToRoxiToken").value = Math.round(allCouponToRoxiToken);
+        }
+
+        var xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+        var yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+        new Chart("myChart1", {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    fill: false,
+                    lineTension: 0,
+                    backgroundColor: "rgba(0,0,255,1.0)",
+                    borderColor: "rgba(0,0,255,0.1)",
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            min: 6,
+                            max: 16
+                        }
+                    }],
+                }
+            }
+        });
+
+        var xValues2 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+
+        new Chart("myChart2", {
+            type: "line",
+            data: {
+                labels: xValues2,
+                datasets: [{
+                    data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
+                    borderColor: "red",
+                    fill: false
+                }, {
+                    data: [1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],
+                    borderColor: "green",
+                    fill: false
+                }, {
+                    data: [300, 700, 2000, 5000, 6000, 4000, 2000, 1000, 200, 100],
+                    borderColor: "blue",
+                    fill: false
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(cityName).style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
