@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="numeral.js"></script>
 
 <body>
     <div class="w3-container w3-indigo">
@@ -17,8 +18,7 @@
                 </div>
                 <form class="w3-container w3-padding-16 w3-border">
                     <label>Roxi Fundraise Target ($)</label>
-                    <input class="w3-input w3-margin-bottom" type="text" id="fundTarget" value="25000000"
-                        onchange="calculateSupply()">
+                    <input class="w3-input w3-margin-bottom" type="text" id="fundTarget" value="25000000">
 
                     <label>Roxi Token Pricing ($)</label>
                     <input class="w3-input w3-margin-bottom" type="number" id="roxiTokenPrice" value="0.25" min="0.00"
@@ -132,6 +132,13 @@
     </div>
 
     <script>
+        var fundTarget = document.getElementById("fundTarget");
+        // fundTarget.addEventListener("keyup", function() {
+        //     let number = numeral(fundTarget.value);
+        //     fundTarget.value = number.format('0,0')
+        // })
+        fundTarget.addEventListener("change", calculateSupply());
+        
         function calculateSupply() {
             let fundTarget = document.getElementById("fundTarget").value;
             let tokenPrice = document.getElementById("roxiTokenPrice").value;
@@ -146,6 +153,7 @@
             document.getElementById("totalCarbonCredit").value = totalCarbonCredit;
             calculatePotentialRenenue();
             calculateIssuedCoupons();
+            allCouponToRoxiToken();
         }
 
         function calculatePotentialRenenue() {
@@ -154,6 +162,7 @@
             let potentialRevenue = carbonPrice*totalCarbonCredit;
             document.getElementById("potentialRevenue").value = potentialRevenue;
             perCouponPrice();
+            couponToRoxiToken();
             allCouponToRoxiToken();
         }
 
