@@ -25,7 +25,7 @@
                         max="100.00" step="0.01" onchange="calculateSupply()">
 
                     <label>Roxi Token Supply ($ROXI)</label>
-                    <input class="w3-input" type="number" id="roxiTokenSupply" value="100000000">
+                    <input class="w3-input" type="text" id="roxiTokenSupply" value="100000000">
                 </form>
 
                 <div class="w3-panel w3-indigo">
@@ -35,17 +35,19 @@
                 <form class="w3-container w3-padding-16 w3-border">
                     <label>Carbon Price ($)</label>
                     <input class="w3-input w3-margin-bottom" type="number" id="carbonPrice" value="8" min="0.00"
-                        max="100.00" step="0.50" onchange="calculatePotentialRenenue()">
+                        max="100.00" step="0.50" onchange="calculatePotentialRevenue()">
 
                     <label>Land Area (Ha)</label>
                     <input class="w3-input w3-margin-bottom" type="text" id="landArea" value="50000"
                         onchange="calculateCarbonCredit()">
 
                     <label>Per-Ha Carbon Credit (Ton)</label>
-                    <input class="w3-input w3-margin-bottom" type="number" id="hatonCarbonCredit" value="20" onchange="calculateCarbonCredit()">
+                    <input class="w3-input w3-margin-bottom" type="number" id="hatonCarbonCredit" value="20"
+                        onchange="calculateCarbonCredit()">
 
                     <label>Total Carbon Credit (Ton)</label>
-                    <input class="w3-input w3-margin-bottom" type="text" id="totalCarbonCredit" value="1000000" onchange="calculatePotentialRenenue()">
+                    <input class="w3-input w3-margin-bottom" type="text" id="totalCarbonCredit" value="1000000"
+                        onchange="calculatePotentialRenenue()">
 
                     <label>Potential Revenue ($)</label>
                     <input class="w3-input" type="text" id="potentialRevenue" value="8000000">
@@ -57,12 +59,12 @@
 
                 <form class="w3-container w3-padding-16 w3-border">
                     <label>Coupon Ratio-per (Ton)</label>
-                    <input class="w3-input w3-margin-bottom" type="number" id="couponRatio" value="1000"
-                        max="10000" step="100" onchange="calculateIssuedCoupons()">
+                    <input class="w3-input w3-margin-bottom" type="number" id="couponRatio" value="1000" max="10000"
+                        step="100" onchange="calculateIssuedCoupons()">
 
                     <label>Total Issue Coupon (Coupons)</label>
-                    <input class="w3-input w3-margin-bottom" type="number" id="totalIssueCoupons" value="1000" min="0.00"
-                        max="10000" step="100">
+                    <input class="w3-input w3-margin-bottom" type="number" id="totalIssueCoupons" value="1000"
+                        min="0.00" max="10000" step="100">
 
                     <label>Per-Coupon Price ($)</label>
                     <input class="w3-input" type="number" id="perCouponPrice" value="8000">
@@ -133,34 +135,51 @@
 
     <script>
         var fundTarget = document.getElementById("fundTarget");
-        // fundTarget.addEventListener("keyup", function() {
-        //     let number = numeral(fundTarget.value);
-        //     fundTarget.value = number.format('0,0')
-        // })
+        var fundTargetNumber = numeral(fundTarget.value);
+        fundTarget.value = fundTargetNumber.format('$ 0,0');
+        fundTarget.addEventListener("keyup", function () {
+            let fundTarget = document.getElementById("fundTarget");
+            let fundTargetNumber = numeral(fundTarget.value);
+            fundTarget.value = fundTargetNumber.format('$ 0,0');
+            calculateSupply();
+        })
         fundTarget.addEventListener("change", calculateSupply());
-        
+
         function calculateSupply() {
-            let fundTarget = document.getElementById("fundTarget").value;
-            let tokenPrice = document.getElementById("roxiTokenPrice").value;
-            let supply = fundTarget / tokenPrice;
-            document.getElementById("roxiTokenSupply").value = Math.round(supply);
+            let fundTarget = numeral(document.getElementById("fundTarget").value);
+            let tokenPrice = numeral(document.getElementById("roxiTokenPrice").value);
+            let supply = fundTarget.divide(tokenPrice.value());
+            document.getElementById("roxiTokenSupply").value = supply.format('0,0');
         }
+        var landArea = document.getElementById("landArea");
+        var landAreaNumber = numeral(landArea.value);
+        landArea.value = landAreaNumber.format('0,0');
+        
+        var totalCarbonCredit = document.getElementById("totalCarbonCredit");
+        var totalCarbonCreditNumber = numeral(totalCarbonCredit.value);
+        totalCarbonCredit.value = totalCarbonCreditNumber.format('0,0');
+
+        var potentialRevenue = document.getElementById("potentialRevenue");
+        var potentialRevenueNumber = numeral(potentialRevenue.value);
+        potentialRevenue.value = potentialRevenueNumber.format('$ 0,0')
 
         function calculateCarbonCredit() {
-            let landArea = document.getElementById("landArea").value;
+            let landArea = numeral(document.getElementById("landArea").value);
             let hatonCarbonCredit = document.getElementById("hatonCarbonCredit").value;
             let totalCarbonCredit = landArea * hatonCarbonCredit;
             document.getElementById("totalCarbonCredit").value = totalCarbonCredit;
-            calculatePotentialRenenue();
+            calculatePotentialRevenue();
             calculateIssuedCoupons();
             allCouponToRoxiToken();
         }
 
-        function calculatePotentialRenenue() {
-            let carbonPrice = document.getElementById("carbonPrice").value;
-            let totalCarbonCredit = document.getElementById("totalCarbonCredit").value;
-            let potentialRevenue = carbonPrice*totalCarbonCredit;
-            document.getElementById("potentialRevenue").value = potentialRevenue;
+        var carbonPrice = document.getElementById("carbonPrice");
+        
+        function calculatePotentialRevenue() {
+            let carbonPrice = numeral(document.getElementById("carbonPrice").value);
+            let totalCarbonCredit = numeral(document.getElementById("totalCarbonCredit").value);
+            let potentialRevenue = carbonPrice.multiply(totalCarbonCredit.value());
+            document.getElementById("potentialRevenue").value = potentialRevenue.format('$ 0,0');
             perCouponPrice();
             couponToRoxiToken();
             allCouponToRoxiToken();
@@ -169,7 +188,7 @@
         function calculateIssuedCoupons() {
             let couponRatio = document.getElementById("couponRatio").value;
             let totalCarbonCredit = document.getElementById("totalCarbonCredit").value;
-            let totalIssueCoupons = totalCarbonCredit/couponRatio;
+            let totalIssueCoupons = totalCarbonCredit / couponRatio;
             document.getElementById("totalIssueCoupons").value = Math.round(totalIssueCoupons);
             perCouponPrice();
             couponToRoxiToken();
@@ -178,21 +197,21 @@
         function perCouponPrice() {
             let couponRatio = document.getElementById("couponRatio").value;
             let carbonPrice = document.getElementById("carbonPrice").value;
-            let perCouponPrice = couponRatio*carbonPrice;
+            let perCouponPrice = couponRatio * carbonPrice;
             document.getElementById("perCouponPrice").value = perCouponPrice;
         }
 
         function couponToRoxiToken() {
             let perCouponPrice = document.getElementById("perCouponPrice").value;
             let tokenPrice = document.getElementById("roxiTokenPrice").value;
-            let couponToRoxiToken = perCouponPrice/tokenPrice;
+            let couponToRoxiToken = perCouponPrice / tokenPrice;
             document.getElementById("couponToRoxiToken").value = Math.round(couponToRoxiToken);
         }
 
         function allCouponToRoxiToken() {
             let totalIssueCoupons = document.getElementById("totalIssueCoupons").value;
             let couponToRoxiToken = document.getElementById("couponToRoxiToken").value;
-            let allCouponToRoxiToken = totalIssueCoupons*couponToRoxiToken;
+            let allCouponToRoxiToken = totalIssueCoupons * couponToRoxiToken;
             document.getElementById("allCouponToRoxiToken").value = Math.round(allCouponToRoxiToken);
         }
 
