@@ -158,6 +158,12 @@
 
         window.addEventListener('load', function () {
             PrivatePublicSaleNumberFormat();
+            var privateSale = document.getElementById("privateSale");
+            privateSale.addEventListener("keyup", function () {
+                let privateSale = numeral(document.getElementById("privateSale").value);
+                document.getElementById("sumtotalRoxi").value = privateSale.format('0,0');
+                calculateRoxiToCoupon();
+            })
 
             var iAtotalRoxi = document.getElementById("iAtotalRoxi");
             var iAtotalRoxiNumber = numeral(iAtotalRoxi.value);
@@ -422,7 +428,7 @@
             labels: ['Issued Coupons', 'Private Investor Coupons', 'Difference'],
             datasets: [{
                 label: 'Coupons Visualization',
-                data: [12, 19, 3],
+                data: [1000, 2500, -1500],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -461,10 +467,19 @@
         chart.update();
     }
 
+    function updateData(chart, data1, data2) {
+        chart.data.datasets[0].data[0] = data1;
+        chart.data.datasets[0].data[1] = data2;
+        chart.data.datasets[0].data[2] = data1-data2;
+        chart.update();
+    }
+
     function couponVisualizer() {
         //addData(myCouponChart,'Coupons Visualization', [10])
-        removeData(myCouponChart);
-        //addData(myCouponChart,'Coupons Visualization', [10,20,30])
+        //removeData(myCouponChart);
+        let data1 = numeral(document.getElementById("totalIssueCoupons").value);
+        let data2 = numeral(document.getElementById("sumtotalCoupon").value);
+        updateData(myCouponChart, data1.value(), data2.value());
     }
 
 
