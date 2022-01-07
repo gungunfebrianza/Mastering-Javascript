@@ -416,7 +416,7 @@
         
 
         const ctx = document.getElementById('myChart1');
-        const myChart = new Chart(ctx, {
+        const myCouponChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ['Issued Coupons', 'Private Investor Coupons', 'Difference'],
@@ -445,8 +445,26 @@
         }
     });
 
-    function couponVisualizer() {
+    function addData(chart, label, data) {
+        chart.data.labels.push(label);
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data.push(data);
+        });
+        chart.update();
+    }
 
+    function removeData(chart) {
+        chart.data.labels.pop();
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data.pop();
+        });
+        chart.update();
+    }
+
+    function couponVisualizer() {
+        //addData(myCouponChart,'Coupons Visualization', [10])
+        removeData(myCouponChart);
+        //addData(myCouponChart,'Coupons Visualization', [10,20,30])
     }
 
 
