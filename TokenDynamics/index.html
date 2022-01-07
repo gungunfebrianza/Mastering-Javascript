@@ -25,7 +25,13 @@
                         max="100.00" step="0.01" onchange="calculateSupply()">
 
                     <label>Roxi Token Supply ($ROXI)</label>
-                    <input class="w3-input" type="text" id="roxiTokenSupply" value="100000000">
+                    <input class="w3-input w3-margin-bottom" type="text" id="roxiTokenSupply" value="100000000">
+
+                    <label>Private Sale ($ROXI)</label>
+                    <input class="w3-input w3-margin-bottom" type="text" id="privateSale" value="80000000">
+
+                    <label>Public Sale ($ROXI)</label>
+                    <input class="w3-input" type="text" id="publicSale" value="20000000">
                 </form>
 
                 <div class="w3-panel w3-indigo">
@@ -84,7 +90,7 @@
                 <p>Data Visualization</p>
             </div>
             <div class="w3-bar w3-margin-top w3-indigo w3-border">
-                <button class="w3-bar-item w3-button" onclick="openCity('London')">Chart 1</button>
+                <button class="w3-bar-item w3-button" onclick="openCity('London')">Coupons</button>
                 <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Chart 2</button>
                 <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Chart 3</button>
             </div>
@@ -108,18 +114,35 @@
                     <th>Total Roxi Token</th>
                     <th>Total Fiat Price</th>
                     <th>Total Coupons</th>
+                    <th></th>
                 </tr>
                 <tr>
                     <td>Investor A</td>
-                    <td><input class="w3-input" type="text"></td>
-                    <td><input class="w3-input" type="text"></td>
-                    <td><input class="w3-input" type="text"></td>
+                    <td><input class="w3-input" id="iAtotalRoxi" value="10000000" type="text"></td>
+                    <td><input class="w3-input" id="iAtotalFiat" type="text"></td>
+                    <td><input class="w3-input" id="iAtotalCoupon" type="text"></td>
+                    <td><input class="w3-btn w3-amber" type="button" value="Convert" onclick="msg()"></td>
                 </tr>
                 <tr>
                     <td>Investor B</td>
-                    <td><input class="w3-input" type="text"></td>
-                    <td><input class="w3-input" type="text"></td>
-                    <td><input class="w3-input" type="text"></td>
+                    <td><input class="w3-input" id="iBtotalRoxi" value="30000000" type="text"></td>
+                    <td><input class="w3-input" id="iBtotalFiat" type="text"></td>
+                    <td><input class="w3-input" id="iBtotalCoupon" type="text"></td>
+                    <td><input class="w3-btn w3-amber" type="button" value="Convert" onclick="msg()"></td>
+                </tr>
+                <tr>
+                    <td>Investor C</td>
+                    <td><input class="w3-input" id="iCtotalRoxi" value="40000000" type="text"></td>
+                    <td><input class="w3-input" id="iCtotalFiat" type="text"></td>
+                    <td><input class="w3-input" id="iCtotalCoupon" type="text"></td>
+                    <td><input class="w3-btn w3-amber" type="button" value="Convert" onclick="msg()"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input class="w3-input" id="sumtotalRoxi" value="80000000" type="text"></td>
+                    <td><input class="w3-input" id="sumtotalFiat" type="text"></td>
+                    <td><input class="w3-input" id="sumtotalCoupon" type="text"></td>
+                    <td><input class="w3-btn w3-teal" type="button" value="Clear" onclick="msg()"></td>
                 </tr>
             </table>
         </div>
@@ -131,7 +154,76 @@
     </div>
 
     <script>
+
+
         window.addEventListener('load', function () {
+            PrivatePublicSaleNumberFormat();
+
+            var iAtotalRoxi = document.getElementById("iAtotalRoxi");
+            var iAtotalRoxiNumber = numeral(iAtotalRoxi.value);
+            iAtotalRoxi.value = iAtotalRoxiNumber.format('0,0');
+
+            var iAtotalFiat = document.getElementById("iAtotalFiat");
+            var iAtotalFiatNumber = numeral(iAtotalFiat.value);
+            iAtotalFiat.value = iAtotalFiatNumber.format('0,0');
+
+            var iBtotalRoxi = document.getElementById("iBtotalRoxi");
+            var iBtotalRoxiNumber = numeral(iBtotalRoxi.value);
+            iBtotalRoxi.value = iBtotalRoxiNumber.format('0,0');
+
+            var iCtotalRoxi = document.getElementById("iCtotalRoxi");
+            var iCtotalRoxiNumber = numeral(iCtotalRoxi.value);
+            iCtotalRoxi.value = iCtotalRoxiNumber.format('0,0');
+
+            var sumtotalRoxi = document.getElementById("sumtotalRoxi");
+            var sumtotalRoxiNumber = numeral(sumtotalRoxi.value);
+            sumtotalRoxi.value = sumtotalRoxiNumber.format('0,0');
+
+            var sumtotalFiat = document.getElementById("sumtotalFiat");
+            var sumtotalFiatNumber = numeral(sumtotalFiat.value);
+            sumtotalFiat.value = sumtotalFiatNumber.format('0,0');
+
+            var roxiTokenPrice = document.getElementById("roxiTokenPrice");
+            calculateRoxiToFiat();
+            calculateRoxiToCoupon();
+            roxiTokenPrice.addEventListener("change", function () {
+                let perCouponPrice = numeral(document.getElementById("perCouponPrice").value);
+                let tokenPrice = numeral(document.getElementById("roxiTokenPrice").value);
+                let couponToRoxiToken = perCouponPrice.divide(tokenPrice.value());
+                document.getElementById("couponToRoxiToken").value = couponToRoxiToken.format('0,0');
+
+                let totalIssueCoupons = numeral(document.getElementById("totalIssueCoupons").value);
+                let couponToRoxiToken2 = numeral(document.getElementById("couponToRoxiToken").value);
+                let allCouponToRoxiToken = totalIssueCoupons.multiply(couponToRoxiToken2.value());
+                document.getElementById("allCouponToRoxiToken").value = allCouponToRoxiToken.format('0,0');
+
+                calculateRoxiToFiat();
+                calculateRoxiToCoupon();
+            });
+
+            var iAtotalRoxi = document.getElementById("iAtotalRoxi");
+            iAtotalRoxi.addEventListener("keyup", function() {
+                calculateRoxiToFiat();
+                calculateRoxiToCoupon();
+            })
+
+            var iBtotalRoxi = document.getElementById("iBtotalRoxi");
+            iBtotalRoxi.addEventListener("keyup", function() {
+                calculateRoxiToFiat();
+                calculateRoxiToCoupon();
+            })
+
+            var iCtotalRoxi = document.getElementById("iCtotalRoxi");
+            iCtotalRoxi.addEventListener("keyup", function() {
+                calculateRoxiToFiat();
+                calculateRoxiToCoupon();
+            })
+
+            sumtotalRoxi.addEventListener("keyup", function() {
+                calculateRoxiToFiat();
+                calculateRoxiToCoupon();
+            })
+
             var fundTarget = document.getElementById("fundTarget");
             var fundTargetNumber = numeral(fundTarget.value);
             fundTarget.value = fundTargetNumber.format('$ 0,0');
@@ -164,13 +256,7 @@
                 calculateCarbonCredit()
             });
 
-            var totalCarbonCredit = document.getElementById("totalCarbonCredit");
-            var totalCarbonCreditNumber = numeral(totalCarbonCredit.value);
-            totalCarbonCredit.value = totalCarbonCreditNumber.format('0,0');
-
-            var potentialRevenue = document.getElementById("potentialRevenue");
-            var potentialRevenueNumber = numeral(potentialRevenue.value);
-            potentialRevenue.value = potentialRevenueNumber.format('$ 0,0')
+            TalisanFormat();
 
             var couponRatio = document.getElementById("couponRatio");
             var couponRatioNumber = numeral(couponRatio.value);
@@ -182,23 +268,53 @@
                 calculateIssuedCoupons();
             });
 
-            var totalIssueCoupons = document.getElementById("totalIssueCoupons");
-            var totalIssueCouponsNumber = numeral(totalIssueCoupons.value);
-            totalIssueCoupons.value = totalIssueCouponsNumber.format('0,0');
-
-            var perCouponPrice = document.getElementById("perCouponPrice");
-            var perCouponPriceNumber = numeral(perCouponPrice.value);
-            perCouponPrice.value = perCouponPriceNumber.format('$ 0,0')
-
-            var couponToRoxiToken = document.getElementById("couponToRoxiToken");
-            var couponToRoxiTokenNumber = numeral(couponToRoxiToken.value);
-            couponToRoxiToken.value = couponToRoxiTokenNumber.format('0,0')
-
-            var allCouponToRoxiToken = document.getElementById("allCouponToRoxiToken");
-            var allCouponToRoxiTokenNumber = numeral(allCouponToRoxiToken.value);
-            allCouponToRoxiToken.value = allCouponToRoxiTokenNumber.format('0,0');
+            IndicatorsNumberFormat();
 
         });
+
+        function calculateRoxiToFiat() {
+            let iAtotalRoxi = numeral(document.getElementById("iAtotalRoxi").value);
+            let tokenPrice = numeral(document.getElementById("roxiTokenPrice").value);
+            let temp = iAtotalRoxi.multiply(tokenPrice.value());
+            document.getElementById("iAtotalFiat").value = temp.format('0,0');
+            
+            let iBtotalRoxi = numeral(document.getElementById("iBtotalRoxi").value);
+            tokenPrice = numeral(document.getElementById("roxiTokenPrice").value);
+            temp = iBtotalRoxi.multiply(tokenPrice.value());
+            document.getElementById("iBtotalFiat").value = temp.format('0,0');
+            
+            let iCtotalRoxi = numeral(document.getElementById("iCtotalRoxi").value);
+            tokenPrice = numeral(document.getElementById("roxiTokenPrice").value);
+            temp = iCtotalRoxi.multiply(tokenPrice.value());
+            document.getElementById("iCtotalFiat").value = temp.format('0,0');
+            
+            let sumtotalRoxi = numeral(document.getElementById("sumtotalRoxi").value);
+            tokenPrice = numeral(document.getElementById("roxiTokenPrice").value);
+            temp = sumtotalRoxi.multiply(tokenPrice.value());
+            document.getElementById("sumtotalFiat").value = temp.format('0,0');
+        }
+
+        function calculateRoxiToCoupon() {
+            let iAtotalRoxi = numeral(document.getElementById("iAtotalRoxi").value);
+            let couponToRoxiToken = numeral(document.getElementById("couponToRoxiToken").value);
+            let temp = iAtotalRoxi.divide(couponToRoxiToken.value());
+            document.getElementById("iAtotalCoupon").value = temp.format('0,0');
+            
+            let iBtotalRoxi = numeral(document.getElementById("iBtotalRoxi").value);
+            couponToRoxiToken = numeral(document.getElementById("couponToRoxiToken").value);
+            temp = iBtotalRoxi.divide(couponToRoxiToken.value());
+            document.getElementById("iBtotalCoupon").value = temp.format('0,0');
+            
+            let iCtotalRoxi = numeral(document.getElementById("iCtotalRoxi").value);
+            couponToRoxiToken = numeral(document.getElementById("couponToRoxiToken").value);
+            temp = iCtotalRoxi.divide(couponToRoxiToken.value());
+            document.getElementById("iCtotalCoupon").value = temp.format('0,0');
+            
+            let sumtotalRoxi = numeral(document.getElementById("sumtotalRoxi").value);
+            couponToRoxiToken = numeral(document.getElementById("couponToRoxiToken").value);
+            temp = sumtotalRoxi.divide(couponToRoxiToken.value());
+            document.getElementById("sumtotalCoupon").value = temp.format('0,0');
+        }
 
         function calculateSupply() {
             let fundTarget = numeral(document.getElementById("fundTarget").value);
@@ -254,9 +370,48 @@
         function allCouponToRoxiToken() {
             let totalIssueCoupons = numeral(document.getElementById("totalIssueCoupons").value);
             let couponToRoxiToken = numeral(document.getElementById("couponToRoxiToken").value);
-            let allCouponToRoxiToken = totalIssueCoupons.multiply(couponToRoxiToken);
+            let allCouponToRoxiToken = totalIssueCoupons.multiply(couponToRoxiToken.value());
             document.getElementById("allCouponToRoxiToken").value = allCouponToRoxiToken.format('0,0');
         }
+
+        function PrivatePublicSaleNumberFormat() {
+            var privateSale = document.getElementById("privateSale");
+            var privateSaleNumber = numeral(privateSale.value);
+            privateSale.value = privateSaleNumber.format('0,0');
+
+            var publicSale = document.getElementById("publicSale");
+            var publicSaleNumber = numeral(publicSale.value);
+            publicSale.value = publicSaleNumber.format('0,0');
+        }
+
+        function TalisanFormat() {
+            var totalCarbonCredit = document.getElementById("totalCarbonCredit");
+            var totalCarbonCreditNumber = numeral(totalCarbonCredit.value);
+            totalCarbonCredit.value = totalCarbonCreditNumber.format('0,0');
+
+            var potentialRevenue = document.getElementById("potentialRevenue");
+            var potentialRevenueNumber = numeral(potentialRevenue.value);
+            potentialRevenue.value = potentialRevenueNumber.format('$ 0,0')
+        }
+
+        function IndicatorsNumberFormat() {
+            var totalIssueCoupons = document.getElementById("totalIssueCoupons");
+            var totalIssueCouponsNumber = numeral(totalIssueCoupons.value);
+            totalIssueCoupons.value = totalIssueCouponsNumber.format('0,0');
+
+            var perCouponPrice = document.getElementById("perCouponPrice");
+            var perCouponPriceNumber = numeral(perCouponPrice.value);
+            perCouponPrice.value = perCouponPriceNumber.format('$ 0,0')
+
+            var couponToRoxiToken = document.getElementById("couponToRoxiToken");
+            var couponToRoxiTokenNumber = numeral(couponToRoxiToken.value);
+            couponToRoxiToken.value = couponToRoxiTokenNumber.format('0,0')
+
+            var allCouponToRoxiToken = document.getElementById("allCouponToRoxiToken");
+            var allCouponToRoxiTokenNumber = numeral(allCouponToRoxiToken.value);
+            allCouponToRoxiToken.value = allCouponToRoxiTokenNumber.format('0,0');
+        }
+
 
         var xValues = ["Coupon Issued", "Private Investor Coupon"];
         var yValues = [55, 49, 44, 24, 15];
