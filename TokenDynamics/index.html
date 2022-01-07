@@ -3,7 +3,7 @@
 <title>Roxi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 <script src="numeral.js"></script>
 
 <body>
@@ -96,7 +96,7 @@
             </div>
             <div class="w3-container w3-white w3-border w3-padding-16 w3-section">
                 <div id="London" class="city">
-                    <canvas id="myChart1" style="width:100%;max-width:700px"></canvas>
+                    <canvas id="myChart1" style="max-width:650px;max-height: 385px;"></canvas>
                 </div>
 
                 <div id="Paris" class="city" style="display:none">
@@ -199,6 +199,7 @@
 
                 calculateRoxiToFiat();
                 calculateRoxiToCoupon();
+                couponVisualizer();
             });
 
             var iAtotalRoxi = document.getElementById("iAtotalRoxi");
@@ -412,57 +413,42 @@
             allCouponToRoxiToken.value = allCouponToRoxiTokenNumber.format('0,0');
         }
 
+        
 
-        var xValues = ["Coupon Issued", "Private Investor Coupon"];
-        var yValues = [55, 49, 44, 24, 15];
-        var barColors = ["red", "green"];
-
-        new Chart("myChart1", {
-            type: "bar",
-            data: {
-                labels: xValues,
-                datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues
-                }]
-            },
-            options: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: true,
-                    text: "Coupons Visualization"
+        const ctx = document.getElementById('myChart1');
+        const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Issued Coupons', 'Private Investor Coupons', 'Difference'],
+            datasets: [{
+                label: 'Coupons Visualization',
+                data: [12, 19, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
-        });
+        }
+    });
 
-        var xValues2 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+    function couponVisualizer() {
 
-        new Chart("myChart2", {
-            type: "line",
-            data: {
-                labels: xValues2,
-                datasets: [{
-                    data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
-                    borderColor: "red",
-                    fill: false
-                }, {
-                    data: [1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],
-                    borderColor: "green",
-                    fill: false
-                }, {
-                    data: [300, 700, 2000, 5000, 6000, 4000, 2000, 1000, 200, 100],
-                    borderColor: "blue",
-                    fill: false
-                }]
-            },
-            options: {
-                legend: {
-                    display: false
-                }
-            }
-        });
+    }
+
 
         function openCity(cityName) {
             var i;
